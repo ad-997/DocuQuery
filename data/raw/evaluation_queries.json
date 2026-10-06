@@ -1,0 +1,1904 @@
+[
+  {
+    "query_id": "Q-HR-001",
+    "question": "According to Annual leave policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Employees receive 22 annual leave days per calendar year.",
+    "expected_document_ids": [
+      "HR-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-002",
+    "question": "According to Annual leave policy - archived (1.0), what is the main documented requirement?",
+    "expected_answer": "Employees received 18 annual leave days per calendar year under version 1.",
+    "expected_document_ids": [
+      "HR-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2024-01-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "historical_lookup"
+  },
+  {
+    "query_id": "Q-HR-003",
+    "question": "According to Employee leave FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Full-time employees receive 22 annual leave days.",
+    "expected_document_ids": [
+      "HR-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-004",
+    "question": "According to Remote work policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Eligible staff may work remotely three days per week.",
+    "expected_document_ids": [
+      "HR-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-005",
+    "question": "According to New employee onboarding (2.0), what is the main documented requirement?",
+    "expected_answer": "The first-day orientation begins at 09:30 in the Atlas training room.",
+    "expected_document_ids": [
+      "HR-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "hr_member",
+      "hr_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-006",
+    "question": "According to Parental leave guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Primary caregivers receive 16 weeks of company-paid leave.",
+    "expected_document_ids": [
+      "HR-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-007",
+    "question": "According to Travel wellbeing guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Trips lasting more than seven nights require a wellbeing check-in.",
+    "expected_document_ids": [
+      "HR-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-008",
+    "question": "According to Performance review SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "Quarterly check-ins use the GrowthTrack workspace.",
+    "expected_document_ids": [
+      "HR-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-009",
+    "question": "According to Learning allowance policy (2.0), what is the main documented requirement?",
+    "expected_answer": "The annual learning allowance is 800 fictional Meridian credits per employee.",
+    "expected_document_ids": [
+      "HR-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-010",
+    "question": "According to Workplace concern intake (2.0), what is the main documented requirement?",
+    "expected_answer": "The concern form accepts anonymous submissions.",
+    "expected_document_ids": [
+      "HR-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "hr_member",
+      "hr_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-011",
+    "question": "According to Offboarding checklist (2.0), what is the main documented requirement?",
+    "expected_answer": "The manager opens an offboarding case five working days before departure.",
+    "expected_document_ids": [
+      "HR-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-012",
+    "question": "According to Contractor onboarding FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Contractor sponsorship expires after 90 days unless renewed.",
+    "expected_document_ids": [
+      "HR-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-HR-013",
+    "question": "According to Compensation review procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Compensation cases use band codes M1 through M6.",
+    "expected_document_ids": [
+      "HR-013"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "hr_reviewer"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-001",
+    "question": "According to Device provisioning SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "Standard laptops are issued within four working days of an approved request.",
+    "expected_document_ids": [
+      "IT-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-002",
+    "question": "According to Service desk FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Routine tickets receive an initial response within eight business hours.",
+    "expected_document_ids": [
+      "IT-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-003",
+    "question": "According to Password and authentication standard (2.0), what is the main documented requirement?",
+    "expected_answer": "Workforce accounts require phishing-resistant multifactor authentication.",
+    "expected_document_ids": [
+      "IT-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-004",
+    "question": "According to Access request instructions (2.0), what is the main documented requirement?",
+    "expected_answer": "Access requests must include a business purpose and resource owner.",
+    "expected_document_ids": [
+      "IT-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-005",
+    "question": "According to VPN outage runbook (2.0), what is the main documented requirement?",
+    "expected_answer": "VPN incidents are owned by the Network duty engineer.",
+    "expected_document_ids": [
+      "IT-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "it_member",
+      "it_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-006",
+    "question": "According to Asset inventory procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Asset records use the prefix AST followed by six digits.",
+    "expected_document_ids": [
+      "IT-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-007",
+    "question": "According to Software catalog guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Approved software is installed through AppShelf.",
+    "expected_document_ids": [
+      "IT-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-008",
+    "question": "According to Backup restoration runbook (2.0), what is the main documented requirement?",
+    "expected_answer": "The Helix file service has a four-hour recovery time objective.",
+    "expected_document_ids": [
+      "IT-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "it_member",
+      "it_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-009",
+    "question": "According to Email migration onboarding (2.0), what is the main documented requirement?",
+    "expected_answer": "Mailbox migration batches are limited to 40 users.",
+    "expected_document_ids": [
+      "IT-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-010",
+    "question": "According to Device loss response (2.0), what is the main documented requirement?",
+    "expected_answer": "Report a lost managed device within 30 minutes of discovery.",
+    "expected_document_ids": [
+      "IT-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "it_member",
+      "it_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-011",
+    "question": "According to IT change policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Standard changes require one working day of notice.",
+    "expected_document_ids": [
+      "IT-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-012",
+    "question": "According to Guest network FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Guest network passes expire after 12 hours.",
+    "expected_document_ids": [
+      "IT-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-IT-013",
+    "question": "According to Privileged access review (2.0), what is the main documented requirement?",
+    "expected_answer": "Privileged entitlements are reviewed every 30 days.",
+    "expected_document_ids": [
+      "IT-013"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-001",
+    "question": "According to Travel reimbursement policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Domestic lodging reimbursement is capped at 140 Meridian credits per night.",
+    "expected_document_ids": [
+      "FIN-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-002",
+    "question": "According to Travel reimbursement policy - archived (1.0), what is the main documented requirement?",
+    "expected_answer": "Domestic lodging reimbursement was capped at 110 Meridian credits per night.",
+    "expected_document_ids": [
+      "FIN-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2024-01-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "historical_lookup"
+  },
+  {
+    "query_id": "Q-FIN-003",
+    "question": "According to Accounts payable SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "Invoices above 5000 Meridian credits require two approvers.",
+    "expected_document_ids": [
+      "FIN-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-004",
+    "question": "According to Purchase order instructions (2.0), what is the main documented requirement?",
+    "expected_answer": "A purchase order is required before supplier commitment above 750 credits.",
+    "expected_document_ids": [
+      "FIN-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-005",
+    "question": "According to Month-end close checklist (2.0), what is the main documented requirement?",
+    "expected_answer": "Close entries freeze on working day four of the next month.",
+    "expected_document_ids": [
+      "FIN-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "finance_member",
+      "finance_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-006",
+    "question": "According to Expense FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Meal receipts require itemized lines.",
+    "expected_document_ids": [
+      "FIN-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-007",
+    "question": "According to Budget planning guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Departments submit rolling forecasts by the twentieth of each month.",
+    "expected_document_ids": [
+      "FIN-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-008",
+    "question": "According to Supplier bank-change verification (2.0), what is the main documented requirement?",
+    "expected_answer": "Bank-change requests require an independently verified callback.",
+    "expected_document_ids": [
+      "FIN-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-009",
+    "question": "According to Revenue recognition guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Subscription revenue is allocated over the contracted service period.",
+    "expected_document_ids": [
+      "FIN-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-010",
+    "question": "According to Payroll cutoff FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Payroll changes close on the eighteenth of each month.",
+    "expected_document_ids": [
+      "FIN-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "finance_member",
+      "finance_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-011",
+    "question": "According to Emergency spend procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Emergency spend up to 2000 credits requires the incident commander and budget owner.",
+    "expected_document_ids": [
+      "FIN-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-012",
+    "question": "According to Financial delegation policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Department heads approve commitments up to 12000 credits.",
+    "expected_document_ids": [
+      "FIN-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-FIN-013",
+    "question": "According to Restricted pricing workbook instructions (2.0), what is the main documented requirement?",
+    "expected_answer": "Margin scenarios use the fictional cost index 1.24.",
+    "expected_document_ids": [
+      "FIN-013"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "finance_analyst",
+      "sales_approver"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-001",
+    "question": "According to Incident severity standard (2.0), what is the main documented requirement?",
+    "expected_answer": "SEV1 is a confirmed widespread critical-service interruption or high-impact data exposure.",
+    "expected_document_ids": [
+      "SEC-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-002",
+    "question": "According to Incident severity standard - archived (1.0), what is the main documented requirement?",
+    "expected_answer": "The archived SEV1 acknowledgment target was 20 minutes.",
+    "expected_document_ids": [
+      "SEC-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2024-01-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "historical_lookup"
+  },
+  {
+    "query_id": "Q-SEC-003",
+    "question": "According to Phishing report FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Use the Report Suspicious button to submit questionable messages.",
+    "expected_document_ids": [
+      "SEC-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-004",
+    "question": "According to Data classification policy (2.0), what is the main documented requirement?",
+    "expected_answer": "The four access labels are public, internal, confidential and restricted.",
+    "expected_document_ids": [
+      "SEC-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-005",
+    "question": "According to Security incident intake (2.0), what is the main documented requirement?",
+    "expected_answer": "Record discovery time, affected service and observable impact.",
+    "expected_document_ids": [
+      "SEC-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "security_member",
+      "security_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-006",
+    "question": "According to Suspicious sign-in runbook (2.0), what is the main documented requirement?",
+    "expected_answer": "The identity duty analyst reviews unusual sign-in alerts.",
+    "expected_document_ids": [
+      "SEC-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "security_member",
+      "security_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-007",
+    "question": "According to Key rotation procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Service secrets rotate every 90 days in the approved vault.",
+    "expected_document_ids": [
+      "SEC-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-008",
+    "question": "According to Vendor security review (2.0), what is the main documented requirement?",
+    "expected_answer": "High-risk vendors receive annual reassessment.",
+    "expected_document_ids": [
+      "SEC-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-009",
+    "question": "According to Security onboarding guide (2.0), what is the main documented requirement?",
+    "expected_answer": "New hires complete threat-awareness training within ten working days.",
+    "expected_document_ids": [
+      "SEC-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-010",
+    "question": "According to Physical access FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Visitor badges expire at 18:00 on the day of issue.",
+    "expected_document_ids": [
+      "SEC-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "security_member",
+      "security_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-011",
+    "question": "According to Evidence preservation runbook (2.0), what is the main documented requirement?",
+    "expected_answer": "Evidence records include collector, timestamp and checksum.",
+    "expected_document_ids": [
+      "SEC-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "security_reviewer"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-012",
+    "question": "According to Security exception policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Risk exceptions expire after at most 60 days.",
+    "expected_document_ids": [
+      "SEC-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SEC-013",
+    "question": "According to Restricted response roster (2.0), what is the main documented requirement?",
+    "expected_answer": "The fictional primary incident role is Beacon Commander.",
+    "expected_document_ids": [
+      "SEC-013"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "security_responder",
+      "incident_commander"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-001",
+    "question": "According to Orion product overview (2.0), what is the main documented requirement?",
+    "expected_answer": "Orion is a fictional workflow analytics service.",
+    "expected_document_ids": [
+      "ENG-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-002",
+    "question": "According to Orion API reference (2.0), what is the main documented requirement?",
+    "expected_answer": "API version v2 uses cursor-based pagination with a maximum page size of 200.",
+    "expected_document_ids": [
+      "ENG-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-003",
+    "question": "According to Orion API reference - archived (1.0), what is the main documented requirement?",
+    "expected_answer": "API version v1 used offset-based pagination with a maximum page size of 100.",
+    "expected_document_ids": [
+      "ENG-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2024-01-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "historical_lookup"
+  },
+  {
+    "query_id": "Q-ENG-004",
+    "question": "According to Deployment SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "Production deploys require a passing release checklist.",
+    "expected_document_ids": [
+      "ENG-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-005",
+    "question": "According to Code review policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Changes require one independent reviewer.",
+    "expected_document_ids": [
+      "ENG-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "engineering_member",
+      "engineering_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-006",
+    "question": "According to Developer onboarding (2.0), what is the main documented requirement?",
+    "expected_answer": "Local development uses synthetic tenant MDEMO-01.",
+    "expected_document_ids": [
+      "ENG-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-007",
+    "question": "According to Orion search configuration (2.0), what is the main documented requirement?",
+    "expected_answer": "Orion semantic search returns 20 candidates before reranking.",
+    "expected_document_ids": [
+      "ENG-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-008",
+    "question": "According to Build pipeline FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "The main pipeline retains build artifacts for 14 days.",
+    "expected_document_ids": [
+      "ENG-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-009",
+    "question": "According to Architecture decision process (2.0), what is the main documented requirement?",
+    "expected_answer": "Architecture records use ADR followed by four digits.",
+    "expected_document_ids": [
+      "ENG-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-010",
+    "question": "According to Database migration runbook (2.0), what is the main documented requirement?",
+    "expected_answer": "Schema migrations require a tested rollback or forward-fix plan.",
+    "expected_document_ids": [
+      "ENG-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "engineering_member",
+      "engineering_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-011",
+    "question": "According to Orion quotas guide (2.0), what is the main documented requirement?",
+    "expected_answer": "The Standard plan allows 5000 export jobs per month.",
+    "expected_document_ids": [
+      "ENG-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-ENG-012",
+    "question": "According to Engineering reliability guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Orion's internal availability target is 99.9 percent per calendar month.",
+    "expected_document_ids": [
+      "ENG-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-001",
+    "question": "According to Business continuity plan (2.0), what is the main documented requirement?",
+    "expected_answer": "The Meridian support hub relocates to the Cedar workspace during site disruption.",
+    "expected_document_ids": [
+      "OPE-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-002",
+    "question": "According to Warehouse receiving SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "Receiving staff reconcile shipment lines before stocking.",
+    "expected_document_ids": [
+      "OPE-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-003",
+    "question": "According to Facilities onboarding (2.0), what is the main documented requirement?",
+    "expected_answer": "Building orientation includes exits, assembly points and accessibility routes.",
+    "expected_document_ids": [
+      "OPE-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-004",
+    "question": "According to Maintenance request FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Routine maintenance requests receive acknowledgment within one working day.",
+    "expected_document_ids": [
+      "OPE-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-005",
+    "question": "According to Supplier delivery escalation (2.0), what is the main documented requirement?",
+    "expected_answer": "Deliveries more than two working days late enter the escalation queue.",
+    "expected_document_ids": [
+      "OPE-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "operations_member",
+      "operations_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-006",
+    "question": "According to Inventory adjustment form (2.0), what is the main documented requirement?",
+    "expected_answer": "Adjustments above 50 units require a second reviewer.",
+    "expected_document_ids": [
+      "OPE-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-007",
+    "question": "According to Order fulfillment guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Standard orders are dispatched within three working days after clearance.",
+    "expected_document_ids": [
+      "OPE-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-008",
+    "question": "According to Operations incident runbook (2.0), what is the main documented requirement?",
+    "expected_answer": "The duty coordinator opens an incident for a sustained fulfillment stoppage.",
+    "expected_document_ids": [
+      "OPE-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "operations_member",
+      "operations_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-009",
+    "question": "According to Shift handover SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "Every shift handover records open cases and next actions.",
+    "expected_document_ids": [
+      "OPE-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-010",
+    "question": "According to Travel logistics quick guide (1.0), what is the main documented requirement?",
+    "expected_answer": "This older quick guide quotes a domestic hotel cap of 110 Meridian credits.",
+    "expected_document_ids": [
+      "OPE-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2025-02-01",
+    "allowed_roles": [
+      "operations_member",
+      "operations_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-011",
+    "question": "According to Capacity planning procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Capacity forecasts cover the next eight weeks.",
+    "expected_document_ids": [
+      "OPE-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-OPE-012",
+    "question": "According to Returns processing FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Return authorizations expire after 21 days.",
+    "expected_document_ids": [
+      "OPE-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-001",
+    "question": "According to Sales onboarding guide (2.0), what is the main documented requirement?",
+    "expected_answer": "New representatives complete sandbox demos before customer calls.",
+    "expected_document_ids": [
+      "SAL-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-002",
+    "question": "According to Discount approval policy (2.0), what is the main documented requirement?",
+    "expected_answer": "Sales managers may approve discounts up to 12 percent.",
+    "expected_document_ids": [
+      "SAL-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-003",
+    "question": "According to Discount approval policy - archived (1.0), what is the main documented requirement?",
+    "expected_answer": "The former Sales manager discount limit was 15 percent.",
+    "expected_document_ids": [
+      "SAL-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2024-01-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "historical_lookup"
+  },
+  {
+    "query_id": "Q-SAL-004",
+    "question": "According to Orion customer FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Standard Orion workspaces support scheduled CSV and JSON exports.",
+    "expected_document_ids": [
+      "SAL-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-005",
+    "question": "According to Lead qualification SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "Qualified opportunities need a documented use case and decision process.",
+    "expected_document_ids": [
+      "SAL-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "sales_member",
+      "sales_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-006",
+    "question": "According to Proposal instructions (2.0), what is the main documented requirement?",
+    "expected_answer": "Proposals require product scope, term and approved pricing.",
+    "expected_document_ids": [
+      "SAL-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-007",
+    "question": "According to Customer handoff checklist (2.0), what is the main documented requirement?",
+    "expected_answer": "Implementation handoff occurs within two working days of signature.",
+    "expected_document_ids": [
+      "SAL-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-008",
+    "question": "According to Competitive positioning guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Orion positioning emphasizes workflow visibility and export automation.",
+    "expected_document_ids": [
+      "SAL-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-009",
+    "question": "According to Demo incident runbook (2.0), what is the main documented requirement?",
+    "expected_answer": "Demo failures use the Cedar backup sandbox.",
+    "expected_document_ids": [
+      "SAL-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "sales_member",
+      "sales_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-010",
+    "question": "According to Renewal procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Renewal preparation starts 90 days before term end.",
+    "expected_document_ids": [
+      "SAL-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "sales_member",
+      "sales_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-011",
+    "question": "According to Enterprise service commitments (2.0), what is the main documented requirement?",
+    "expected_answer": "The standard signed Enterprise template commits to 99.5 percent monthly availability.",
+    "expected_document_ids": [
+      "SAL-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-SAL-012",
+    "question": "According to Restricted deal desk guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Strategic exception code DD-47 routes to the deal desk chair.",
+    "expected_document_ids": [
+      "SAL-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "finance_analyst",
+      "sales_approver"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-001",
+    "question": "According to Records retention schedule (2.0), what is the main documented requirement?",
+    "expected_answer": "Approved financial close records are retained for seven fictional fiscal years.",
+    "expected_document_ids": [
+      "COM-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-002",
+    "question": "According to Privacy request SOP (2.0), what is the main documented requirement?",
+    "expected_answer": "The internal target for privacy request completion is 25 calendar days.",
+    "expected_document_ids": [
+      "COM-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-003",
+    "question": "According to Audit evidence instructions (2.0), what is the main documented requirement?",
+    "expected_answer": "Evidence submissions include control ID, period and owner.",
+    "expected_document_ids": [
+      "COM-003"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-004",
+    "question": "According to Third-party compliance FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "Vendor attestations are reviewed before onboarding.",
+    "expected_document_ids": [
+      "COM-004"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-005",
+    "question": "According to Legal hold procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Only the designated legal coordinator can release a hold.",
+    "expected_document_ids": [
+      "COM-005"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "compliance_member",
+      "compliance_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-006",
+    "question": "According to Access review control (2.0), what is the main documented requirement?",
+    "expected_answer": "Business application access is reviewed every quarter.",
+    "expected_document_ids": [
+      "COM-006"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-007",
+    "question": "According to Incident notification decision guide (2.0), what is the main documented requirement?",
+    "expected_answer": "Compliance records the notification assessment and applicable fictional contract.",
+    "expected_document_ids": [
+      "COM-007"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "compliance_member",
+      "compliance_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-008",
+    "question": "According to Policy publishing procedure (2.0), what is the main documented requirement?",
+    "expected_answer": "Published policies require an owner and effective date.",
+    "expected_document_ids": [
+      "COM-008"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-009",
+    "question": "According to Compliance onboarding guide (2.0), what is the main documented requirement?",
+    "expected_answer": "New joiners complete records-handling learning within ten working days.",
+    "expected_document_ids": [
+      "COM-009"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-010",
+    "question": "According to Export review checklist (2.0), what is the main documented requirement?",
+    "expected_answer": "Export requests require destination, purpose and data classification.",
+    "expected_document_ids": [
+      "COM-010"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "compliance_member",
+      "compliance_manager"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-011",
+    "question": "According to Whistleblowing FAQ (2.0), what is the main documented requirement?",
+    "expected_answer": "The fictional reporting portal accepts anonymous reports.",
+    "expected_document_ids": [
+      "COM-011"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "compliance_reviewer"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "Q-COM-012",
+    "question": "According to Orion assurance summary (2.0), what is the main documented requirement?",
+    "expected_answer": "Orion training environments contain synthetic records.",
+    "expected_document_ids": [
+      "COM-012"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-04-01",
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "task": "single_document_lookup"
+  },
+  {
+    "query_id": "CHALLENGE-01",
+    "question": "How many annual leave days do full-time employees get now?",
+    "expected_answer": "22 days.",
+    "expected_document_ids": [
+      "HR-001",
+      "HR-003"
+    ],
+    "expected_pages": [
+      1,
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-02",
+    "question": "What is the current domestic hotel reimbursement cap, and why does an Operations guide say 110?",
+    "expected_answer": "140 Meridian credits per night; the Operations guide is stale.",
+    "expected_document_ids": [
+      "FIN-001",
+      "OPE-010"
+    ],
+    "expected_pages": [
+      1,
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-03",
+    "question": "What was the annual leave allowance in 2024?",
+    "expected_answer": "18 days.",
+    "expected_document_ids": [
+      "HR-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2024-06-01",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-04",
+    "question": "Can a sales manager approve a 14 percent discount in April 2026?",
+    "expected_answer": "No. The current manager limit is 12 percent; Finance approval is required.",
+    "expected_document_ids": [
+      "SAL-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-05",
+    "question": "What is the maximum page size in Orion API v2?",
+    "expected_answer": "200, using cursor-based pagination.",
+    "expected_document_ids": [
+      "ENG-002"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-06",
+    "question": "How quickly must a SEV1 incident be acknowledged under the current standard?",
+    "expected_answer": "Within ten minutes.",
+    "expected_document_ids": [
+      "SEC-001"
+    ],
+    "expected_pages": [
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-07",
+    "question": "Is the customer availability commitment 99.9 percent?",
+    "expected_answer": "The standard signed Enterprise template states 99.5 percent; 99.9 percent is the internal Engineering target. A specific signed agreement may differ.",
+    "expected_document_ids": [
+      "SAL-011",
+      "ENG-012"
+    ],
+    "expected_pages": [
+      1,
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-08",
+    "question": "Does a legal hold permit normal deletion of financial close records after seven years?",
+    "expected_answer": "No. Legal holds suspend scheduled deletion until the designated legal coordinator releases the hold.",
+    "expected_document_ids": [
+      "COM-001",
+      "COM-005"
+    ],
+    "expected_pages": [
+      1,
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-09",
+    "question": "How often are privileged entitlements reviewed?",
+    "expected_answer": "Every 30 days; quarterly business application review is a different scope.",
+    "expected_document_ids": [
+      "IT-013",
+      "COM-006"
+    ],
+    "expected_pages": [
+      1,
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "CHALLENGE-10",
+    "question": "What is Orion Standard export quota?",
+    "expected_answer": "5000 export jobs per month.",
+    "expected_document_ids": [
+      "ENG-011",
+      "SAL-004"
+    ],
+    "expected_pages": [
+      1,
+      1
+    ],
+    "as_of_date": "2026-10-05",
+    "task": "cross_document_or_conflict",
+    "allowed_roles": [
+      "employee",
+      "it_member",
+      "finance_member",
+      "security_member",
+      "sales_member",
+      "compliance_member"
+    ]
+  },
+  {
+    "query_id": "ACL-FIN-013",
+    "question": "What restricted details are documented in Restricted pricing workbook instructions?",
+    "expected_answer": "Access denied; do not reveal or cite restricted content.",
+    "expected_document_ids": [],
+    "forbidden_document_ids": [
+      "FIN-013"
+    ],
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "access_denial"
+  },
+  {
+    "query_id": "ACL-SEC-013",
+    "question": "What restricted details are documented in Restricted response roster?",
+    "expected_answer": "Access denied; do not reveal or cite restricted content.",
+    "expected_document_ids": [],
+    "forbidden_document_ids": [
+      "SEC-013"
+    ],
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "access_denial"
+  },
+  {
+    "query_id": "ACL-SAL-012",
+    "question": "What restricted details are documented in Restricted deal desk guide?",
+    "expected_answer": "Access denied; do not reveal or cite restricted content.",
+    "expected_document_ids": [],
+    "forbidden_document_ids": [
+      "SAL-012"
+    ],
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "access_denial"
+  },
+  {
+    "query_id": "ACL-HR-013",
+    "question": "What restricted details are documented in Compensation review procedure?",
+    "expected_answer": "Access denied; do not reveal or cite restricted content.",
+    "expected_document_ids": [],
+    "forbidden_document_ids": [
+      "HR-013"
+    ],
+    "allowed_roles": [
+      "employee"
+    ],
+    "task": "access_denial"
+  }
+]

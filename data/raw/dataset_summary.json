@@ -1,0 +1,40 @@
+{
+  "pdf_count": 100,
+  "total_pages": 346,
+  "departments": {
+    "HR": 13,
+    "IT": 13,
+    "Finance": 13,
+    "Security": 13,
+    "Engineering": 12,
+    "Operations": 12,
+    "Sales": 12,
+    "Compliance": 12
+  },
+  "access_levels": {
+    "internal": 69,
+    "confidential": 21,
+    "restricted": 6,
+    "public": 4
+  },
+  "document_types": {
+    "policy": 20,
+    "FAQ": 14,
+    "onboarding guide": 7,
+    "guide": 10,
+    "SOP": 24,
+    "form instructions": 9,
+    "incident runbook": 9,
+    "product documentation": 7
+  },
+  "page_count_distribution": {
+    "1": 17,
+    "2": 17,
+    "3": 17,
+    "4": 17,
+    "5": 16,
+    "6": 16
+  },
+  "evaluation_query_count": 114,
+  "validation": "All PDFs reopened, intended page counts verified, first-page factual sentences extracted, SHA-256 checksums computed."
+}

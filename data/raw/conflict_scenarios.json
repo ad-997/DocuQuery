@@ -1,0 +1,66 @@
+[
+  {
+    "scenario": "version_conflict",
+    "documents": [
+      "HR-002",
+      "HR-001"
+    ],
+    "resolution": "Use HR-001 for dates on or after 2026-04-01; use the older version only for an explicit historical question."
+  },
+  {
+    "scenario": "version_conflict",
+    "documents": [
+      "FIN-002",
+      "FIN-001"
+    ],
+    "resolution": "Use FIN-001 for dates on or after 2026-04-01; use the older version only for an explicit historical question."
+  },
+  {
+    "scenario": "version_conflict",
+    "documents": [
+      "SEC-002",
+      "SEC-001"
+    ],
+    "resolution": "Use SEC-001 for dates on or after 2026-04-01; use the older version only for an explicit historical question."
+  },
+  {
+    "scenario": "version_conflict",
+    "documents": [
+      "ENG-003",
+      "ENG-002"
+    ],
+    "resolution": "Use ENG-002 for dates on or after 2026-04-01; use the older version only for an explicit historical question."
+  },
+  {
+    "scenario": "version_conflict",
+    "documents": [
+      "SAL-003",
+      "SAL-002"
+    ],
+    "resolution": "Use SAL-002 for dates on or after 2026-04-01; use the older version only for an explicit historical question."
+  },
+  {
+    "scenario": "stale_cross_department_guidance",
+    "documents": [
+      "OPE-010",
+      "FIN-001"
+    ],
+    "resolution": "Current Finance policy controls: 140 credits per night. Operations quick guide quotes stale 110-credit guidance."
+  },
+  {
+    "scenario": "scope_difference_not_true_conflict",
+    "documents": [
+      "ENG-012",
+      "SAL-011"
+    ],
+    "resolution": "99.9 percent is an internal target; 99.5 percent is the standard signed Enterprise template commitment. The signed customer contract controls contractual questions."
+  },
+  {
+    "scenario": "review_scope_overlap",
+    "documents": [
+      "COM-006",
+      "IT-013"
+    ],
+    "resolution": "Quarterly applies to business applications; 30 days applies to privileged entitlements."
+  }
+]
