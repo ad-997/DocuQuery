@@ -1,0 +1,2630 @@
+[
+  {
+    "document_id": "HR-001",
+    "filename": "HR/hr-001_annual_leave_policy.pdf",
+    "department": "HR",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Annual leave policy: Employees receive 22 annual leave days per calendar year.",
+    "title": "Annual leave policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "abc8eb0d2fd205177a89a54b4b82934137fbc8820ef7adc701233d1eb9e88062",
+    "tags": [
+      "hr",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-002",
+    "filename": "HR/hr-002_annual_leave_policy_archived.pdf",
+    "department": "HR",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Annual leave policy - archived: Employees received 18 annual leave days per calendar year under version 1.",
+    "title": "Annual leave policy - archived",
+    "version": "1.0",
+    "status": "archived",
+    "effective_date": "2024-01-01",
+    "superseded_by": "HR-001",
+    "authority_rank": 3,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "2b771c5985810aad5fb84654dd8610d45bc2b9c32fe8ca1100a72d7b107c1f09",
+    "tags": [
+      "hr",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-003",
+    "filename": "HR/hr-003_employee_leave_faq.pdf",
+    "department": "HR",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Employee leave FAQ: Full-time employees receive 22 annual leave days.",
+    "title": "Employee leave FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "bf20c36e576ad19a8009c8f227c704c849b9ad8af5a012668500a068ba1bb930",
+    "tags": [
+      "hr",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-004",
+    "filename": "HR/hr-004_remote_work_policy.pdf",
+    "department": "HR",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Remote work policy: Eligible staff may work remotely three days per week.",
+    "title": "Remote work policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "1b92c043804c7366ef46f646842f45fba181bff1414cd1c491657d3fab413078",
+    "tags": [
+      "hr",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-005",
+    "filename": "HR/hr-005_new_employee_onboarding.pdf",
+    "department": "HR",
+    "document_type": "onboarding guide",
+    "access_level": "confidential",
+    "description": "New employee onboarding: The first-day orientation begins at 09:30 in the Atlas training room.",
+    "title": "New employee onboarding",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "hr_member",
+      "hr_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "5e5d60a349c28a33dce39201bfccb5c736ea57e8d826fa85bab76179baf50d8e",
+    "tags": [
+      "hr",
+      "onboarding guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-006",
+    "filename": "HR/hr-006_parental_leave_guide.pdf",
+    "department": "HR",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Parental leave guide: Primary caregivers receive 16 weeks of company-paid leave.",
+    "title": "Parental leave guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "38bd027931d3f7e5ce69fdaa026249d5ddaea5c33b925ab7a71a9afbe128abda",
+    "tags": [
+      "hr",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-007",
+    "filename": "HR/hr-007_travel_wellbeing_guide.pdf",
+    "department": "HR",
+    "document_type": "guide",
+    "access_level": "internal",
+    "description": "Travel wellbeing guide: Trips lasting more than seven nights require a wellbeing check-in.",
+    "title": "Travel wellbeing guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "739dfe57ff9e351a9942fe4c42ee518070f7aef6ee9aff602791a3ed65e87ec1",
+    "tags": [
+      "hr",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-008",
+    "filename": "HR/hr-008_performance_review_sop.pdf",
+    "department": "HR",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Performance review SOP: Quarterly check-ins use the GrowthTrack workspace.",
+    "title": "Performance review SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "6cef669b920fb806101e3a42cca4048a40f5eccdafecfcbce1c14f0d1ef50f44",
+    "tags": [
+      "hr",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-009",
+    "filename": "HR/hr-009_learning_allowance_policy.pdf",
+    "department": "HR",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Learning allowance policy: The annual learning allowance is 800 fictional Meridian credits per employee.",
+    "title": "Learning allowance policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "6b42235aa6d788cd5605da00cfc69556e10c8a82d57059b28ee78917c587b5d2",
+    "tags": [
+      "hr",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-010",
+    "filename": "HR/hr-010_workplace_concern_intake.pdf",
+    "department": "HR",
+    "document_type": "form instructions",
+    "access_level": "confidential",
+    "description": "Workplace concern intake: The concern form accepts anonymous submissions.",
+    "title": "Workplace concern intake",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "hr_member",
+      "hr_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "74bed1bba007b83793b8e640728746f4c969836445a1583f1ac91e6f96d474f8",
+    "tags": [
+      "hr",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-011",
+    "filename": "HR/hr-011_offboarding_checklist.pdf",
+    "department": "HR",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Offboarding checklist: The manager opens an offboarding case five working days before departure.",
+    "title": "Offboarding checklist",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "f83882c67be0a5bf6163f255261d421bd6f1b501a26daf3c6c207aeecee20307",
+    "tags": [
+      "hr",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-012",
+    "filename": "HR/hr-012_contractor_onboarding_faq.pdf",
+    "department": "HR",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Contractor onboarding FAQ: Contractor sponsorship expires after 90 days unless renewed.",
+    "title": "Contractor onboarding FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "62490edbe29534950d4c9317693bda7f3ade2b6d2d41cff81072a92adf903721",
+    "tags": [
+      "hr",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "HR-013",
+    "filename": "HR/hr-013_compensation_review_procedure.pdf",
+    "department": "HR",
+    "document_type": "SOP",
+    "access_level": "restricted",
+    "description": "Compensation review procedure: Compensation cases use band codes M1 through M6.",
+    "title": "Compensation review procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "hr_reviewer"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "e38ad3731e076075132bb3f7df0eba70fc357d7c0d1eae7437c4e2baa8f46af6",
+    "tags": [
+      "hr",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-001",
+    "filename": "IT/it-001_device_provisioning_sop.pdf",
+    "department": "IT",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Device provisioning SOP: Standard laptops are issued within four working days of an approved request.",
+    "title": "Device provisioning SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "c24cf9555e2f1692b95142480bbc54bfe19e29fcd09de2ca0f4e9e2fd2cf1a3d",
+    "tags": [
+      "it",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-002",
+    "filename": "IT/it-002_service_desk_faq.pdf",
+    "department": "IT",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Service desk FAQ: Routine tickets receive an initial response within eight business hours.",
+    "title": "Service desk FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "4ec8a1e2b970f044ffcdbdae2eea01b258eec28432e0def1bae1866235879118",
+    "tags": [
+      "it",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-003",
+    "filename": "IT/it-003_password_and_authentication_standard.pdf",
+    "department": "IT",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Password and authentication standard: Workforce accounts require phishing-resistant multifactor authentication.",
+    "title": "Password and authentication standard",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "489dee157ee5594d578d3aa9fc501248637d8fdba67f007738b0f10f050ce754",
+    "tags": [
+      "it",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-004",
+    "filename": "IT/it-004_access_request_instructions.pdf",
+    "department": "IT",
+    "document_type": "form instructions",
+    "access_level": "internal",
+    "description": "Access request instructions: Access requests must include a business purpose and resource owner.",
+    "title": "Access request instructions",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "52f3ed303e4e2bb1c174f52f15298bcd331d69f3cb3e90ab524ddb56bdfc92d5",
+    "tags": [
+      "it",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-005",
+    "filename": "IT/it-005_vpn_outage_runbook.pdf",
+    "department": "IT",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "VPN outage runbook: VPN incidents are owned by the Network duty engineer.",
+    "title": "VPN outage runbook",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "it_member",
+      "it_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "94c40105a832bd1122582eb1747af91e2909b6cb18272656763a2fb6339e2a4b",
+    "tags": [
+      "it",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-006",
+    "filename": "IT/it-006_asset_inventory_procedure.pdf",
+    "department": "IT",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Asset inventory procedure: Asset records use the prefix AST followed by six digits.",
+    "title": "Asset inventory procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "a9590e3565c9170fe53dbd2f13a2597e1a38edae61b7f56cc8c7c5d040c855b3",
+    "tags": [
+      "it",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-007",
+    "filename": "IT/it-007_software_catalog_guide.pdf",
+    "department": "IT",
+    "document_type": "guide",
+    "access_level": "internal",
+    "description": "Software catalog guide: Approved software is installed through AppShelf.",
+    "title": "Software catalog guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "0d873cc6a729cd3d91539110fb3540c62de22a99f2fa29bd623d6eabd86c2041",
+    "tags": [
+      "it",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-008",
+    "filename": "IT/it-008_backup_restoration_runbook.pdf",
+    "department": "IT",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "Backup restoration runbook: The Helix file service has a four-hour recovery time objective.",
+    "title": "Backup restoration runbook",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "it_member",
+      "it_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "c897560422df384b9948450f0a95ad8926de0b5dc380337cf9ee6dc665e5f665",
+    "tags": [
+      "it",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-009",
+    "filename": "IT/it-009_email_migration_onboarding.pdf",
+    "department": "IT",
+    "document_type": "onboarding guide",
+    "access_level": "internal",
+    "description": "Email migration onboarding: Mailbox migration batches are limited to 40 users.",
+    "title": "Email migration onboarding",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "0de2eaff735779a62d7d3f6d510f36d828f51f030694b136d51dde776584a192",
+    "tags": [
+      "it",
+      "onboarding guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-010",
+    "filename": "IT/it-010_device_loss_response.pdf",
+    "department": "IT",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "Device loss response: Report a lost managed device within 30 minutes of discovery.",
+    "title": "Device loss response",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "it_member",
+      "it_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "5d392a3ca5dbac947857966cc79d8d08b098245ec11f8cae080cd4235903384f",
+    "tags": [
+      "it",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-011",
+    "filename": "IT/it-011_it_change_policy.pdf",
+    "department": "IT",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "IT change policy: Standard changes require one working day of notice.",
+    "title": "IT change policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "55ede1441d0c97a90b867c1196580c433bc11ce57b8fdb91c29ba87b29ea085c",
+    "tags": [
+      "it",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-012",
+    "filename": "IT/it-012_guest_network_faq.pdf",
+    "department": "IT",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Guest network FAQ: Guest network passes expire after 12 hours.",
+    "title": "Guest network FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "9b36f8237c7c3cb998951ddd93e7a0330ee6a989e1006da9c2b623dcf788fa32",
+    "tags": [
+      "it",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "IT-013",
+    "filename": "IT/it-013_privileged_access_review.pdf",
+    "department": "IT",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Privileged access review: Privileged entitlements are reviewed every 30 days.",
+    "title": "Privileged access review",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "d796940f4560e734f8d663742a08f323eda23c396a1553404d40b91d72d5c0b3",
+    "tags": [
+      "it",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-001",
+    "filename": "Finance/fin-001_travel_reimbursement_policy.pdf",
+    "department": "Finance",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Travel reimbursement policy: Domestic lodging reimbursement is capped at 140 Meridian credits per night.",
+    "title": "Travel reimbursement policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "4811557537750c8b836d175626effe22d381530b1ef029628668c50ada641303",
+    "tags": [
+      "finance",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-002",
+    "filename": "Finance/fin-002_travel_reimbursement_policy_archived.pdf",
+    "department": "Finance",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Travel reimbursement policy - archived: Domestic lodging reimbursement was capped at 110 Meridian credits per night.",
+    "title": "Travel reimbursement policy - archived",
+    "version": "1.0",
+    "status": "archived",
+    "effective_date": "2024-01-01",
+    "superseded_by": "FIN-001",
+    "authority_rank": 3,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "f9017e90fc1e12071b75e81fe64fc23e86ed38d0a7e39912a485c136d3eb10a4",
+    "tags": [
+      "finance",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-003",
+    "filename": "Finance/fin-003_accounts_payable_sop.pdf",
+    "department": "Finance",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Accounts payable SOP: Invoices above 5000 Meridian credits require two approvers.",
+    "title": "Accounts payable SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "53aff0c8d67ea2cfa84e3d91bdacd4f8516999df01283b6e5822a61bdf7f4493",
+    "tags": [
+      "finance",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-004",
+    "filename": "Finance/fin-004_purchase_order_instructions.pdf",
+    "department": "Finance",
+    "document_type": "form instructions",
+    "access_level": "internal",
+    "description": "Purchase order instructions: A purchase order is required before supplier commitment above 750 credits.",
+    "title": "Purchase order instructions",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "11067462faf03330b4f7b31f751c6f4c7c3e328673da55a42860353da8e44436",
+    "tags": [
+      "finance",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-005",
+    "filename": "Finance/fin-005_month_end_close_checklist.pdf",
+    "department": "Finance",
+    "document_type": "SOP",
+    "access_level": "confidential",
+    "description": "Month-end close checklist: Close entries freeze on working day four of the next month.",
+    "title": "Month-end close checklist",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "finance_member",
+      "finance_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "7c78e8c96dfc5693da169a790f0f1f0350a8c83bc9a41c304789fdf439acbe0b",
+    "tags": [
+      "finance",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-006",
+    "filename": "Finance/fin-006_expense_faq.pdf",
+    "department": "Finance",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Expense FAQ: Meal receipts require itemized lines.",
+    "title": "Expense FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "962bd698e500090e724d3a8a52c8bad87ef1f632dcff0c8375a02d7225995762",
+    "tags": [
+      "finance",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-007",
+    "filename": "Finance/fin-007_budget_planning_guide.pdf",
+    "department": "Finance",
+    "document_type": "guide",
+    "access_level": "internal",
+    "description": "Budget planning guide: Departments submit rolling forecasts by the twentieth of each month.",
+    "title": "Budget planning guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "0c445457a9ace149ac3f3733e96f92be45646aa08f7d769555c94666f6060f67",
+    "tags": [
+      "finance",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-008",
+    "filename": "Finance/fin-008_supplier_bank_change_verification.pdf",
+    "department": "Finance",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Supplier bank-change verification: Bank-change requests require an independently verified callback.",
+    "title": "Supplier bank-change verification",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "78e8dc39008e92d275054ab0af9ba4bbde923050562506a85c7c942c108e0dac",
+    "tags": [
+      "finance",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-009",
+    "filename": "Finance/fin-009_revenue_recognition_guide.pdf",
+    "department": "Finance",
+    "document_type": "guide",
+    "access_level": "internal",
+    "description": "Revenue recognition guide: Subscription revenue is allocated over the contracted service period.",
+    "title": "Revenue recognition guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "3c90dd6d6c4438199f40e1b88027351614ca42ba56992b5646b8a4137a77200c",
+    "tags": [
+      "finance",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-010",
+    "filename": "Finance/fin-010_payroll_cutoff_faq.pdf",
+    "department": "Finance",
+    "document_type": "FAQ",
+    "access_level": "confidential",
+    "description": "Payroll cutoff FAQ: Payroll changes close on the eighteenth of each month.",
+    "title": "Payroll cutoff FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "finance_member",
+      "finance_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "f7ebc1fb783b60026c2b3ad41b06538a6dcf3b124c4ad35e8e73c3ba6aeef5f2",
+    "tags": [
+      "finance",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-011",
+    "filename": "Finance/fin-011_emergency_spend_procedure.pdf",
+    "department": "Finance",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Emergency spend procedure: Emergency spend up to 2000 credits requires the incident commander and budget owner.",
+    "title": "Emergency spend procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "688024b6ececdc7894745b7048cb9fa36b294b3dc78d9b12e0b3c4a475ec4876",
+    "tags": [
+      "finance",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-012",
+    "filename": "Finance/fin-012_financial_delegation_policy.pdf",
+    "department": "Finance",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Financial delegation policy: Department heads approve commitments up to 12000 credits.",
+    "title": "Financial delegation policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "830ff9c9bf77cb29912978cfc50739da3470484e116546fdd785caf6f011f2b7",
+    "tags": [
+      "finance",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "FIN-013",
+    "filename": "Finance/fin-013_restricted_pricing_workbook_instructions.pdf",
+    "department": "Finance",
+    "document_type": "form instructions",
+    "access_level": "restricted",
+    "description": "Restricted pricing workbook instructions: Margin scenarios use the fictional cost index 1.24.",
+    "title": "Restricted pricing workbook instructions",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "finance_analyst",
+      "sales_approver"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "ac357c6fc68b9b6e168e83d80e4a23bf1f878025d90186c1a595174c0a30abb3",
+    "tags": [
+      "finance",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-001",
+    "filename": "Security/sec-001_incident_severity_standard.pdf",
+    "department": "Security",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Incident severity standard: SEV1 is a confirmed widespread critical-service interruption or high-impact data exposure.",
+    "title": "Incident severity standard",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "0d951a4d02a708535456313b203240f864e2b4e4f3eb5377a0f02e3bcbd4cf85",
+    "tags": [
+      "security",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-002",
+    "filename": "Security/sec-002_incident_severity_standard_archived.pdf",
+    "department": "Security",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Incident severity standard - archived: The archived SEV1 acknowledgment target was 20 minutes.",
+    "title": "Incident severity standard - archived",
+    "version": "1.0",
+    "status": "archived",
+    "effective_date": "2024-01-01",
+    "superseded_by": "SEC-001",
+    "authority_rank": 3,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "30483764c4652f5e6a1dbd5904412145f67c09969ea54131e8ea3a94142fff5d",
+    "tags": [
+      "security",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-003",
+    "filename": "Security/sec-003_phishing_report_faq.pdf",
+    "department": "Security",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Phishing report FAQ: Use the Report Suspicious button to submit questionable messages.",
+    "title": "Phishing report FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "db6af8e0b6f356dcf5de389ee06944fbf80154592a48c515de0e4617fc142e76",
+    "tags": [
+      "security",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-004",
+    "filename": "Security/sec-004_data_classification_policy.pdf",
+    "department": "Security",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Data classification policy: The four access labels are public, internal, confidential and restricted.",
+    "title": "Data classification policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "b877ac4b35b7f522c0c94271a9eec7f00eb184aea1f2c579b77ae64f6fab3942",
+    "tags": [
+      "security",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-005",
+    "filename": "Security/sec-005_security_incident_intake.pdf",
+    "department": "Security",
+    "document_type": "form instructions",
+    "access_level": "confidential",
+    "description": "Security incident intake: Record discovery time, affected service and observable impact.",
+    "title": "Security incident intake",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "security_member",
+      "security_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "3d6d152f0e4152d80b8bd97e92f70edce575491465fbc734f1aff771c47a5606",
+    "tags": [
+      "security",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-006",
+    "filename": "Security/sec-006_suspicious_sign_in_runbook.pdf",
+    "department": "Security",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "Suspicious sign-in runbook: The identity duty analyst reviews unusual sign-in alerts.",
+    "title": "Suspicious sign-in runbook",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "security_member",
+      "security_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "7dc871b4eb63f507d83d62215166cf74cc1987d003fbee481c1085405805170b",
+    "tags": [
+      "security",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-007",
+    "filename": "Security/sec-007_key_rotation_procedure.pdf",
+    "department": "Security",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Key rotation procedure: Service secrets rotate every 90 days in the approved vault.",
+    "title": "Key rotation procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "55bbdfef47fea11cab5924a8e360a861975316fd4ac3ed896ee249ca8bd5d7ad",
+    "tags": [
+      "security",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-008",
+    "filename": "Security/sec-008_vendor_security_review.pdf",
+    "department": "Security",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Vendor security review: High-risk vendors receive annual reassessment.",
+    "title": "Vendor security review",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "93ea9cd9ca661501099346fb0f6d700a1b6397b7c0dc20cd7de8c5ac656824fe",
+    "tags": [
+      "security",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-009",
+    "filename": "Security/sec-009_security_onboarding_guide.pdf",
+    "department": "Security",
+    "document_type": "onboarding guide",
+    "access_level": "internal",
+    "description": "Security onboarding guide: New hires complete threat-awareness training within ten working days.",
+    "title": "Security onboarding guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "11e67ba38c68ee245459e551cbc5182b6706ad3f8dd0f1863ad83afeefe56793",
+    "tags": [
+      "security",
+      "onboarding guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-010",
+    "filename": "Security/sec-010_physical_access_faq.pdf",
+    "department": "Security",
+    "document_type": "FAQ",
+    "access_level": "confidential",
+    "description": "Physical access FAQ: Visitor badges expire at 18:00 on the day of issue.",
+    "title": "Physical access FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "security_member",
+      "security_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "aa5d0b1319d5f4884a2b464d0bcb9cb97c632d3603d25f7bb5fe0a1187e1cbe8",
+    "tags": [
+      "security",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-011",
+    "filename": "Security/sec-011_evidence_preservation_runbook.pdf",
+    "department": "Security",
+    "document_type": "incident runbook",
+    "access_level": "restricted",
+    "description": "Evidence preservation runbook: Evidence records include collector, timestamp and checksum.",
+    "title": "Evidence preservation runbook",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "security_reviewer"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "15b1eabf18e35ac9ceaa2c7f281d7a0164b014e87ce3c3c4af6735a089d73455",
+    "tags": [
+      "security",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-012",
+    "filename": "Security/sec-012_security_exception_policy.pdf",
+    "department": "Security",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Security exception policy: Risk exceptions expire after at most 60 days.",
+    "title": "Security exception policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "ddc9acbb3936cbcbb2d7c708d0861b20f96fe8bd62a91dd9258126f41368e109",
+    "tags": [
+      "security",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SEC-013",
+    "filename": "Security/sec-013_restricted_response_roster.pdf",
+    "department": "Security",
+    "document_type": "guide",
+    "access_level": "restricted",
+    "description": "Restricted response roster: The fictional primary incident role is Beacon Commander.",
+    "title": "Restricted response roster",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "security_responder",
+      "incident_commander"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "2ea738eafabca19f0ae055109c8a883afc1f15f601322c15336f83cf037551d4",
+    "tags": [
+      "security",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "ENG-001",
+    "filename": "Engineering/eng-001_orion_product_overview.pdf",
+    "department": "Engineering",
+    "document_type": "product documentation",
+    "access_level": "public",
+    "description": "Orion product overview: Orion is a fictional workflow analytics service.",
+    "title": "Orion product overview",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "670f96b10d324a05212cae4445e3b488a6956a602883d4b92388404ef07b2825",
+    "tags": [
+      "engineering",
+      "product documentation",
+      "synthetic",
+      "orion"
+    ]
+  },
+  {
+    "document_id": "ENG-002",
+    "filename": "Engineering/eng-002_orion_api_reference.pdf",
+    "department": "Engineering",
+    "document_type": "product documentation",
+    "access_level": "internal",
+    "description": "Orion API reference: API version v2 uses cursor-based pagination with a maximum page size of 200.",
+    "title": "Orion API reference",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "277f08e4a5b3d43b3c90a5558a7027e09d2ac8164222c01bb327bab8afa8cecf",
+    "tags": [
+      "engineering",
+      "product documentation",
+      "synthetic",
+      "orion"
+    ]
+  },
+  {
+    "document_id": "ENG-003",
+    "filename": "Engineering/eng-003_orion_api_reference_archived.pdf",
+    "department": "Engineering",
+    "document_type": "product documentation",
+    "access_level": "internal",
+    "description": "Orion API reference - archived: API version v1 used offset-based pagination with a maximum page size of 100.",
+    "title": "Orion API reference - archived",
+    "version": "1.0",
+    "status": "archived",
+    "effective_date": "2024-01-01",
+    "superseded_by": "ENG-002",
+    "authority_rank": 3,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "b4a94621a6226d218d7eb5e187bd62e912909f1755b3fd1b8ef5d8d2fc69e8c8",
+    "tags": [
+      "engineering",
+      "product documentation",
+      "synthetic",
+      "orion"
+    ]
+  },
+  {
+    "document_id": "ENG-004",
+    "filename": "Engineering/eng-004_deployment_sop.pdf",
+    "department": "Engineering",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Deployment SOP: Production deploys require a passing release checklist.",
+    "title": "Deployment SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "6e16916181ef19819bd70fb6f27a019ee94ab49a7c4aeef55d036c5322287aa0",
+    "tags": [
+      "engineering",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "ENG-005",
+    "filename": "Engineering/eng-005_code_review_policy.pdf",
+    "department": "Engineering",
+    "document_type": "policy",
+    "access_level": "confidential",
+    "description": "Code review policy: Changes require one independent reviewer.",
+    "title": "Code review policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "engineering_member",
+      "engineering_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "0090a9bfe6407160365a741526e3fafb7885f9733973dd8af7199a955dc7e077",
+    "tags": [
+      "engineering",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "ENG-006",
+    "filename": "Engineering/eng-006_developer_onboarding.pdf",
+    "department": "Engineering",
+    "document_type": "onboarding guide",
+    "access_level": "internal",
+    "description": "Developer onboarding: Local development uses synthetic tenant MDEMO-01.",
+    "title": "Developer onboarding",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "05076acd1c4ffc9e3b8692c53b35b9091d27a14f66a1a4b09045f713f56f78c9",
+    "tags": [
+      "engineering",
+      "onboarding guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "ENG-007",
+    "filename": "Engineering/eng-007_orion_search_configuration.pdf",
+    "department": "Engineering",
+    "document_type": "product documentation",
+    "access_level": "internal",
+    "description": "Orion search configuration: Orion semantic search returns 20 candidates before reranking.",
+    "title": "Orion search configuration",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "1ad828bbb7346d8837726a08800e0022dc8fd334f536cefd9f641a30e66544c1",
+    "tags": [
+      "engineering",
+      "product documentation",
+      "synthetic",
+      "orion"
+    ]
+  },
+  {
+    "document_id": "ENG-008",
+    "filename": "Engineering/eng-008_build_pipeline_faq.pdf",
+    "department": "Engineering",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Build pipeline FAQ: The main pipeline retains build artifacts for 14 days.",
+    "title": "Build pipeline FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "8d9b8a6094a26be81dae86a19b6a03182063a688affe030b23f1a4d8223aab61",
+    "tags": [
+      "engineering",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "ENG-009",
+    "filename": "Engineering/eng-009_architecture_decision_process.pdf",
+    "department": "Engineering",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Architecture decision process: Architecture records use ADR followed by four digits.",
+    "title": "Architecture decision process",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "2ea4efafe9a640b10def27adae19b6d1c1b663bf10346ac5318a215589655d8d",
+    "tags": [
+      "engineering",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "ENG-010",
+    "filename": "Engineering/eng-010_database_migration_runbook.pdf",
+    "department": "Engineering",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "Database migration runbook: Schema migrations require a tested rollback or forward-fix plan.",
+    "title": "Database migration runbook",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "engineering_member",
+      "engineering_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "cde45d41f7e91abc11cb4552de649bae59aa98b055713ea4b6777c73429d9c08",
+    "tags": [
+      "engineering",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "ENG-011",
+    "filename": "Engineering/eng-011_orion_quotas_guide.pdf",
+    "department": "Engineering",
+    "document_type": "product documentation",
+    "access_level": "internal",
+    "description": "Orion quotas guide: The Standard plan allows 5000 export jobs per month.",
+    "title": "Orion quotas guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "52f3ee46cb8d5ec02eb81b581c0f61a4be57b690e03be815ee8b0387d33ff31b",
+    "tags": [
+      "engineering",
+      "product documentation",
+      "synthetic",
+      "orion"
+    ]
+  },
+  {
+    "document_id": "ENG-012",
+    "filename": "Engineering/eng-012_engineering_reliability_guide.pdf",
+    "department": "Engineering",
+    "document_type": "guide",
+    "access_level": "internal",
+    "description": "Engineering reliability guide: Orion's internal availability target is 99.9 percent per calendar month.",
+    "title": "Engineering reliability guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "4b530066aed103055fa5ea3dec5699edbf30bd99d41d3c450d396a0db2629e11",
+    "tags": [
+      "engineering",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-001",
+    "filename": "Operations/ope-001_business_continuity_plan.pdf",
+    "department": "Operations",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Business continuity plan: The Meridian support hub relocates to the Cedar workspace during site disruption.",
+    "title": "Business continuity plan",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "064bc5bf57eb5dac8ae5301248a3573f768d8b24eec583009027b0269fc24a5c",
+    "tags": [
+      "operations",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-002",
+    "filename": "Operations/ope-002_warehouse_receiving_sop.pdf",
+    "department": "Operations",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Warehouse receiving SOP: Receiving staff reconcile shipment lines before stocking.",
+    "title": "Warehouse receiving SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "e9b59a17eb2b2116bb61d8bd200c6cc11a65f046da9226a57d2b73ffc19f0cec",
+    "tags": [
+      "operations",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-003",
+    "filename": "Operations/ope-003_facilities_onboarding.pdf",
+    "department": "Operations",
+    "document_type": "onboarding guide",
+    "access_level": "internal",
+    "description": "Facilities onboarding: Building orientation includes exits, assembly points and accessibility routes.",
+    "title": "Facilities onboarding",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "aee49f43f2197e44992ba06e1fa7ac8e5779dc0dc3e524816306ce4e683d6868",
+    "tags": [
+      "operations",
+      "onboarding guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-004",
+    "filename": "Operations/ope-004_maintenance_request_faq.pdf",
+    "department": "Operations",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Maintenance request FAQ: Routine maintenance requests receive acknowledgment within one working day.",
+    "title": "Maintenance request FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "c540c52946179e0f9ab811c1ae22778298453f2090e8629152d1f294a057b0dc",
+    "tags": [
+      "operations",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-005",
+    "filename": "Operations/ope-005_supplier_delivery_escalation.pdf",
+    "department": "Operations",
+    "document_type": "SOP",
+    "access_level": "confidential",
+    "description": "Supplier delivery escalation: Deliveries more than two working days late enter the escalation queue.",
+    "title": "Supplier delivery escalation",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "operations_member",
+      "operations_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "209209cfd8729c64b7f4eb159da742cc280aec4c1eb6ebfc3e84e1dc9e7642a1",
+    "tags": [
+      "operations",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-006",
+    "filename": "Operations/ope-006_inventory_adjustment_form.pdf",
+    "department": "Operations",
+    "document_type": "form instructions",
+    "access_level": "internal",
+    "description": "Inventory adjustment form: Adjustments above 50 units require a second reviewer.",
+    "title": "Inventory adjustment form",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "a271979ae83a16bd6867d728948cbe2c23bb4d231735617842d57804bc65c9db",
+    "tags": [
+      "operations",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-007",
+    "filename": "Operations/ope-007_order_fulfillment_guide.pdf",
+    "department": "Operations",
+    "document_type": "guide",
+    "access_level": "internal",
+    "description": "Order fulfillment guide: Standard orders are dispatched within three working days after clearance.",
+    "title": "Order fulfillment guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "5244ed6c6f74a536f4a60d1245e8f2701bfb7ab19775d0839ecd33d13f78ae17",
+    "tags": [
+      "operations",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-008",
+    "filename": "Operations/ope-008_operations_incident_runbook.pdf",
+    "department": "Operations",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "Operations incident runbook: The duty coordinator opens an incident for a sustained fulfillment stoppage.",
+    "title": "Operations incident runbook",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "operations_member",
+      "operations_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "993bc583fa6119aacd9f5985f518c02aea9222d0119a4a1eca5eeac1141c5f8e",
+    "tags": [
+      "operations",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-009",
+    "filename": "Operations/ope-009_shift_handover_sop.pdf",
+    "department": "Operations",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Shift handover SOP: Every shift handover records open cases and next actions.",
+    "title": "Shift handover SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "eef78582beff585781f94e7fcaa7cb33deef70ed7b21ad331b9b3f692c8fa995",
+    "tags": [
+      "operations",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-010",
+    "filename": "Operations/ope-010_travel_logistics_quick_guide.pdf",
+    "department": "Operations",
+    "document_type": "guide",
+    "access_level": "confidential",
+    "description": "Travel logistics quick guide: This older quick guide quotes a domestic hotel cap of 110 Meridian credits.",
+    "title": "Travel logistics quick guide",
+    "version": "1.0",
+    "status": "stale",
+    "effective_date": "2025-02-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "operations_member",
+      "operations_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "1b53dd6934983cf0422c659d542e1779e53e2e6a7a16ac5617ae13d74edbf308",
+    "tags": [
+      "operations",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-011",
+    "filename": "Operations/ope-011_capacity_planning_procedure.pdf",
+    "department": "Operations",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Capacity planning procedure: Capacity forecasts cover the next eight weeks.",
+    "title": "Capacity planning procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "cb17af1b309c1c8e8b3a7664ece131700c440d5af2f6c07407bf766bb33bc60d",
+    "tags": [
+      "operations",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "OPE-012",
+    "filename": "Operations/ope-012_returns_processing_faq.pdf",
+    "department": "Operations",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Returns processing FAQ: Return authorizations expire after 21 days.",
+    "title": "Returns processing FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "ab91766f06a64e26a72c7829ab242b279901f63d491079adeb1526233efc2d6a",
+    "tags": [
+      "operations",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-001",
+    "filename": "Sales/sal-001_sales_onboarding_guide.pdf",
+    "department": "Sales",
+    "document_type": "onboarding guide",
+    "access_level": "internal",
+    "description": "Sales onboarding guide: New representatives complete sandbox demos before customer calls.",
+    "title": "Sales onboarding guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "b534a77487eefdb66108e289fd2a09d40cae1ec667537a4b4e7d4471b187ab1b",
+    "tags": [
+      "sales",
+      "onboarding guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-002",
+    "filename": "Sales/sal-002_discount_approval_policy.pdf",
+    "department": "Sales",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Discount approval policy: Sales managers may approve discounts up to 12 percent.",
+    "title": "Discount approval policy",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "8256517cc62f47086275db432c1201b8787712b0c409323a5887204f40208dd5",
+    "tags": [
+      "sales",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-003",
+    "filename": "Sales/sal-003_discount_approval_policy_archived.pdf",
+    "department": "Sales",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Discount approval policy - archived: The former Sales manager discount limit was 15 percent.",
+    "title": "Discount approval policy - archived",
+    "version": "1.0",
+    "status": "archived",
+    "effective_date": "2024-01-01",
+    "superseded_by": "SAL-002",
+    "authority_rank": 3,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "7f4a3ad99973e7132c9a6acb1351ede980bc8085c037ac980d301656cee04625",
+    "tags": [
+      "sales",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-004",
+    "filename": "Sales/sal-004_orion_customer_faq.pdf",
+    "department": "Sales",
+    "document_type": "FAQ",
+    "access_level": "public",
+    "description": "Orion customer FAQ: Standard Orion workspaces support scheduled CSV and JSON exports.",
+    "title": "Orion customer FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "c834bd1eadccb2c815382a236097cb438f778b2fb06ecee1b3f451a28532f607",
+    "tags": [
+      "sales",
+      "FAQ",
+      "synthetic",
+      "orion"
+    ]
+  },
+  {
+    "document_id": "SAL-005",
+    "filename": "Sales/sal-005_lead_qualification_sop.pdf",
+    "department": "Sales",
+    "document_type": "SOP",
+    "access_level": "confidential",
+    "description": "Lead qualification SOP: Qualified opportunities need a documented use case and decision process.",
+    "title": "Lead qualification SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "sales_member",
+      "sales_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "4e0a4bdf5dacd11444a847653dfc40f87f40fb73b7d51d5b6a94b328875df8dc",
+    "tags": [
+      "sales",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-006",
+    "filename": "Sales/sal-006_proposal_instructions.pdf",
+    "department": "Sales",
+    "document_type": "form instructions",
+    "access_level": "internal",
+    "description": "Proposal instructions: Proposals require product scope, term and approved pricing.",
+    "title": "Proposal instructions",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "cf8dffb7276b98027aa5daebdd1b65c396d8ad80c70b1c0ad216107b4d9977de",
+    "tags": [
+      "sales",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-007",
+    "filename": "Sales/sal-007_customer_handoff_checklist.pdf",
+    "department": "Sales",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Customer handoff checklist: Implementation handoff occurs within two working days of signature.",
+    "title": "Customer handoff checklist",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "0ac99b454c0b4d6a70ccdc63c7d9ecb2eb14028baba75c42a8e9a4ad64552a40",
+    "tags": [
+      "sales",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-008",
+    "filename": "Sales/sal-008_competitive_positioning_guide.pdf",
+    "department": "Sales",
+    "document_type": "guide",
+    "access_level": "public",
+    "description": "Competitive positioning guide: Orion positioning emphasizes workflow visibility and export automation.",
+    "title": "Competitive positioning guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "eba6ddd319a94097cdc2a930c7457a9ac06cef1b1b62f11092adf800d0c132b9",
+    "tags": [
+      "sales",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-009",
+    "filename": "Sales/sal-009_demo_incident_runbook.pdf",
+    "department": "Sales",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "Demo incident runbook: Demo failures use the Cedar backup sandbox.",
+    "title": "Demo incident runbook",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "sales_member",
+      "sales_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "fb01bf75daf78adbd03b93489e43790467522551149cae2ed80000ef6f448bb7",
+    "tags": [
+      "sales",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-010",
+    "filename": "Sales/sal-010_renewal_procedure.pdf",
+    "department": "Sales",
+    "document_type": "SOP",
+    "access_level": "confidential",
+    "description": "Renewal procedure: Renewal preparation starts 90 days before term end.",
+    "title": "Renewal procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "sales_member",
+      "sales_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "7f7a428a84530e89d4157edc6db2feb483869e9ce332cedde178f99080442ddc",
+    "tags": [
+      "sales",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-011",
+    "filename": "Sales/sal-011_enterprise_service_commitments.pdf",
+    "department": "Sales",
+    "document_type": "product documentation",
+    "access_level": "internal",
+    "description": "Enterprise service commitments: The standard signed Enterprise template commits to 99.5 percent monthly availability.",
+    "title": "Enterprise service commitments",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "b788268dd944d5c946f561bf4067037acb037173f28a7f6ebffc59e49af54f19",
+    "tags": [
+      "sales",
+      "product documentation",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "SAL-012",
+    "filename": "Sales/sal-012_restricted_deal_desk_guide.pdf",
+    "department": "Sales",
+    "document_type": "guide",
+    "access_level": "restricted",
+    "description": "Restricted deal desk guide: Strategic exception code DD-47 routes to the deal desk chair.",
+    "title": "Restricted deal desk guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "finance_analyst",
+      "sales_approver"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "62d7b77991c85d9aa8ec3b793912f780cc2cdbeb2c769d37bffa3abe182cd2c1",
+    "tags": [
+      "sales",
+      "guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-001",
+    "filename": "Compliance/com-001_records_retention_schedule.pdf",
+    "department": "Compliance",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Records retention schedule: Approved financial close records are retained for seven fictional fiscal years.",
+    "title": "Records retention schedule",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "8ba0899c64e9c53012d6f54c2d89328d846da80278750210110a1a5cd9d3cbcf",
+    "tags": [
+      "compliance",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-002",
+    "filename": "Compliance/com-002_privacy_request_sop.pdf",
+    "department": "Compliance",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Privacy request SOP: The internal target for privacy request completion is 25 calendar days.",
+    "title": "Privacy request SOP",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "0a6e54aa295841e71f7d5d52cb139d0a550989e1fcf306e77a1255b7447b13b3",
+    "tags": [
+      "compliance",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-003",
+    "filename": "Compliance/com-003_audit_evidence_instructions.pdf",
+    "department": "Compliance",
+    "document_type": "form instructions",
+    "access_level": "internal",
+    "description": "Audit evidence instructions: Evidence submissions include control ID, period and owner.",
+    "title": "Audit evidence instructions",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "ec60a6f06ae04114fa446e9d7aad346d577fbfa8dc81e53238346a45b6b6e538",
+    "tags": [
+      "compliance",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-004",
+    "filename": "Compliance/com-004_third_party_compliance_faq.pdf",
+    "department": "Compliance",
+    "document_type": "FAQ",
+    "access_level": "internal",
+    "description": "Third-party compliance FAQ: Vendor attestations are reviewed before onboarding.",
+    "title": "Third-party compliance FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "9e401f15f872604d2cd2268fec7c1a3992f6e0fef41b8118a4e15758dfa7d7a0",
+    "tags": [
+      "compliance",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-005",
+    "filename": "Compliance/com-005_legal_hold_procedure.pdf",
+    "department": "Compliance",
+    "document_type": "SOP",
+    "access_level": "confidential",
+    "description": "Legal hold procedure: Only the designated legal coordinator can release a hold.",
+    "title": "Legal hold procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "compliance_member",
+      "compliance_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "0838ab371e2c0ee1cd27bf1516abf5deca3842eb9e3a6f2241730737b336d44b",
+    "tags": [
+      "compliance",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-006",
+    "filename": "Compliance/com-006_access_review_control.pdf",
+    "department": "Compliance",
+    "document_type": "policy",
+    "access_level": "internal",
+    "description": "Access review control: Business application access is reviewed every quarter.",
+    "title": "Access review control",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "bd190335b453d527ae36dc26c8e7a58ef0f17dfbcf5c7f615d176469acf5b00c",
+    "tags": [
+      "compliance",
+      "policy",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-007",
+    "filename": "Compliance/com-007_incident_notification_decision_guide.pdf",
+    "department": "Compliance",
+    "document_type": "incident runbook",
+    "access_level": "confidential",
+    "description": "Incident notification decision guide: Compliance records the notification assessment and applicable fictional contract.",
+    "title": "Incident notification decision guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "compliance_member",
+      "compliance_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 5,
+    "sha256": "8f13e75afd90f70d9e2a81c545903aab7cef9e2babd557e677cc0091ecaee6f9",
+    "tags": [
+      "compliance",
+      "incident runbook",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-008",
+    "filename": "Compliance/com-008_policy_publishing_procedure.pdf",
+    "department": "Compliance",
+    "document_type": "SOP",
+    "access_level": "internal",
+    "description": "Policy publishing procedure: Published policies require an owner and effective date.",
+    "title": "Policy publishing procedure",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 6,
+    "sha256": "0bf45f072b9de2b1d7bc02c6f1b9592ebc1b727c596f1112de588d1008d8c0d2",
+    "tags": [
+      "compliance",
+      "SOP",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-009",
+    "filename": "Compliance/com-009_compliance_onboarding_guide.pdf",
+    "department": "Compliance",
+    "document_type": "onboarding guide",
+    "access_level": "internal",
+    "description": "Compliance onboarding guide: New joiners complete records-handling learning within ten working days.",
+    "title": "Compliance onboarding guide",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 1,
+    "sha256": "4f8fcf395abaaffc0134cc87daabad8edbf65617f768737acd31f94720342394",
+    "tags": [
+      "compliance",
+      "onboarding guide",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-010",
+    "filename": "Compliance/com-010_export_review_checklist.pdf",
+    "department": "Compliance",
+    "document_type": "form instructions",
+    "access_level": "confidential",
+    "description": "Export review checklist: Export requests require destination, purpose and data classification.",
+    "title": "Export review checklist",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "compliance_member",
+      "compliance_manager"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 2,
+    "sha256": "6d910bac90c20eaa17027bd637f7ef82959a8792ca6efb114202fa5784e5c5cc",
+    "tags": [
+      "compliance",
+      "form instructions",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-011",
+    "filename": "Compliance/com-011_whistleblowing_faq.pdf",
+    "department": "Compliance",
+    "document_type": "FAQ",
+    "access_level": "restricted",
+    "description": "Whistleblowing FAQ: The fictional reporting portal accepts anonymous reports.",
+    "title": "Whistleblowing FAQ",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 2,
+    "allowed_roles": [
+      "compliance_reviewer"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 3,
+    "sha256": "aa0fe57a51f36b4572799a4b798d71a60786da8e1838508ab47adae97d34ca07",
+    "tags": [
+      "compliance",
+      "FAQ",
+      "synthetic",
+      "enterprise"
+    ]
+  },
+  {
+    "document_id": "COM-012",
+    "filename": "Compliance/com-012_orion_assurance_summary.pdf",
+    "department": "Compliance",
+    "document_type": "product documentation",
+    "access_level": "public",
+    "description": "Orion assurance summary: Orion training environments contain synthetic records.",
+    "title": "Orion assurance summary",
+    "version": "2.0",
+    "status": "current",
+    "effective_date": "2026-04-01",
+    "superseded_by": "",
+    "authority_rank": 1,
+    "allowed_roles": [
+      "anonymous",
+      "employee"
+    ],
+    "tenant_id": "meridian_synthetic",
+    "page_count": 4,
+    "sha256": "c755a2891c0ac9c0253a9b72382a00bc898ab1647c9a7f72f3600d2d6a010e3a",
+    "tags": [
+      "compliance",
+      "product documentation",
+      "synthetic",
+      "orion"
+    ]
+  }
+]
