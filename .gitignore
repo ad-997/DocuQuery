@@ -1,0 +1,157 @@
+# ==============================
+# Python / FastAPI
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Markdown
+STEPS.md
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking / linting
+.mypy_cache/
+.ruff_cache/
+
+
+# ==============================
+# Environment variables / secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# JWT / API keys / secrets
+*.pem
+*.key
+*.crt
+
+
+# ==============================
+# PyCharm / JetBrains
+# ==============================
+.idea/
+*.iml
+
+
+# ==============================
+# VS Code (optional)
+# ==============================
+.vscode/
+
+
+# ==============================
+# React / Node.js
+# ==============================
+node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# React build output
+dist/
+build/
+
+# Vite
+.vite/
+
+# Local frontend env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# ==============================
+# Qdrant / Vector DB data
+# ==============================
+qdrant_storage/
+qdrant_data/
+storage/
+
+
+# ==============================
+# Uploaded documents
+# ==============================
+uploads/
+documents/
+
+# Keep empty folders if needed
+!uploads/.gitkeep
+!documents/.gitkeep
+
+
+# ==============================
+# Embedding / ML cache
+# ==============================
+.cache/
+huggingface/
+transformers_cache/
+
+# Model files
+*.bin
+*.safetensors
+*.onnx
+
+
+# ==============================
+# Docker
+# ==============================
+docker-compose.override.yml
+
+# Docker volumes / local persistent data
+docker-data/
+volumes/
+
+
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
+
+
+# ==============================
+# Database files
+# ==============================
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ==============================
+# OS files
+# ==============================
+.DS_Store
+Thumbs.db
+
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.temp
+*.swp
+*.swo
+~$*
