@@ -5,7 +5,7 @@ DocuQuery is an enterprise RAG knowledge platform designed to help employees sea
 The project is currently under development.
 
 ## Current Features
-
+ 
 - FastAPI backend setup
 - PDF text extraction using `pypdf`
 - Page-wise document processing
