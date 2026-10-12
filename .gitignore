@@ -123,6 +123,7 @@ docker-compose.override.yml
 # Docker volumes / local persistent data
 docker-data/
 volumes/
+qdrant_storage/
 
 
 # ==============================

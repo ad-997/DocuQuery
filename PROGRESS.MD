@@ -12,20 +12,32 @@ Enterprise RAG Knowledge Platform.
 - [x] Fixed-size chunking
 - [x] Chunk overlap
 - [x] Page metadata preserved during chunking
-- [x] Add document metadata
-
+- [x] Document metadata extraction
+- [x] Generate document chunk embeddings
+- [x] Generate query embeddings
+- [x] Basic in-memory dense retrieval
+- [x] Cosine similarity using normalized embeddings
+- [x] Top-K retrieval
+- [x] Run Qdrant locally using Docker
+- [x] Create Qdrant vector collection
+- [x] Store chunk vectors in Qdrant
+- [x] Store document metadata as Qdrant payload
+- [x] Deterministic point IDs for document chunks
+- [x] Upsert chunks into Qdrant
+- [x] Dense retrieval using Qdrant
 
 ### Next
-- [ ] Generate embeddings
-- [ ] Store vectors in Qdrant
-- [ ] Dense retrieval
-- [ ] BM25 retrieval
+- [ ] BM25 sparse retrieval
 - [ ] Hybrid retrieval
-- [ ] RRF
+- [ ] Reciprocal Rank Fusion (RRF)
 - [ ] Reranking
+- [ ] Improve and evaluate chunking strategies
 - [ ] LLM answer generation
-- [ ] Source citations
+- [ ] Source and page citations
 - [ ] JWT authentication
-- [ ] RBAC
-- [ ] Evaluation
-- [ ] Docker
+- [ ] Role-Based Access Control (RBAC)
+- [ ] Retrieval-level permission filtering
+- [ ] RAG evaluation
+- [ ] React frontend
+- [ ] Full Docker / Docker Compose setup
+- [ ] Deployment

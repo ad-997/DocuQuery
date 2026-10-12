@@ -1,3 +1,6 @@
+
+
+# Fixed Size Chunks with Overlap
 def chunk_pages(pages, metadata, chunk_size=500, overlap=100):
     chunks = []
 
@@ -20,4 +23,4 @@ def chunk_pages(pages, metadata, chunk_size=500, overlap=100):
                 "text":chunk_text
             })
             start += chunk_size - overlap
-        return chunks
+    return chunks

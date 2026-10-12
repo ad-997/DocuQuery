@@ -9,7 +9,6 @@ def embed_chunks(chunks):
         texts,
         normalize_embeddings=True
     )
-
     return embeddings
 
 def embed_query(query):
