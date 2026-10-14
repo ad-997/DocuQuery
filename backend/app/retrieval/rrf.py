@@ -1,4 +1,4 @@
-def reciprocal_rank_fusion(dense_results, bm25_results, k=60, top_k=3):
+def reciprocal_rank_fusion(dense_results, bm25_results, k=60, top_k=10):
     fused = {}
     
     #Dense rankings
