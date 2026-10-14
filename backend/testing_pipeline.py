@@ -3,7 +3,9 @@ from app.ingestion.chunker import chunk_pages
 from app.ingestion.metadata import extract_metadata
 
 from app.embedding.embedder import embed_chunks, embed_query
+
 from app.retrieval.sparse import search_bm25
+from app.retrieval.rrf import reciprocal_rank_fusion
 
 from app.vectorstore.qdrant_store import (
     create_collection,
@@ -102,3 +104,24 @@ for query in queries:
         print("Page:", chunk["page"])
         print("Text:")
         print(chunk["text"])
+
+
+hybrid_results = reciprocal_rank_fusion(
+    dense_results,
+    bm25_results,
+    top_k=3
+)
+
+
+print("\n------- HYBRID / RRF RESULTS -------")
+
+for i, result in enumerate(hybrid_results, start=1):
+    chunk = result["chunk"]
+
+    print(f"\nHYBRID RESULT {i}")
+    print("RRF Score:", result["score"])
+    print("Document:", chunk["filename"])
+    print("Page:", chunk["page"])
+
+    print("\nText:")
+    print(chunk["text"])
