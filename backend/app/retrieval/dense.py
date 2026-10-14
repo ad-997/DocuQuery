@@ -1,6 +1,6 @@
 import numpy as np
 
-def search_chunks(query_embeddings, chunk_embeddings, chunks, top_k=3):
+def search_chunks(query_embeddings, chunk_embeddings, chunks, top_k=10):
     scores = chunk_embeddings @ query_embeddings # Dot Product
     top_indices = np.argsort(-scores)[:top_k]
     results = []

@@ -8,7 +8,7 @@ from rank_bm25 import BM25Okapi
 def tokenize(text):
     return re.findall(r"\b\w+\b", text.lower()) # split into a list
 
-def search_bm25(query, chunks, top_k=3):
+def search_bm25(query, chunks, top_k=10):
     tokenized_chunk = [
         tokenize(chunk["text"])
         for chunk in chunks

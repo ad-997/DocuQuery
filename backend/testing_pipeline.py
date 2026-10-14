@@ -7,6 +7,8 @@ from app.embedding.embedder import embed_chunks, embed_query
 from app.retrieval.sparse import search_bm25
 from app.retrieval.rrf import reciprocal_rank_fusion
 
+from app.reranking.reranker import rerank
+
 from app.vectorstore.qdrant_store import (
     create_collection,
     upsert_chunks,
@@ -14,16 +16,33 @@ from app.vectorstore.qdrant_store import (
 )
 
 
+# =========================================================
+# CONFIG
+# =========================================================
+
 file_path = "/Users/ad/DocuQuery/data/raw/HR/hr-006_parental_leave_guide.pdf"
 
+queries = [
+    "How much parental leave can an employee take?",
+    "Who is eligible for parental leave?",
+    "When does the parental leave policy become effective?"
+]
 
-# -----------------------
+# Choose what you want to test
+RUN_DENSE = False
+RUN_BM25 = False
+RUN_HYBRID = False
+RUN_RERANKER = True
+
+
+# =========================================================
 # INGESTION
-# -----------------------
+# =========================================================
 
 create_collection()
 
 metadata = extract_metadata(file_path)
+
 pages = load_pdf(file_path)
 
 chunks = chunk_pages(
@@ -35,46 +54,30 @@ chunks = chunk_pages(
 
 chunk_embeddings = embed_chunks(chunks)
 
-print("\nTotal pages:", len(pages))
-print("Total chunks:", len(chunks))
-
 upsert_chunks(
     chunks,
     chunk_embeddings
 )
 
-
-# -----------------------
-# RETRIEVAL
-# -----------------------
-
-queries = [
-    "How much parental leave can an employee take?",
-    "Who is eligible for parental leave?",
-    "When does the parental leave policy become effective?"
-]
+print("Total pages:", len(pages))
+print("Total chunks:", len(chunks))
 
 
-for query in queries:
+# =========================================================
+# TEST FUNCTIONS
+# =========================================================
 
-    print("\n====================================")
-    print("QUERY:", query)
-    print("====================================")
-
-    # -----------------------
-    # DENSE RETRIEVAL
-    # -----------------------
-
+def test_dense(query):
     query_embedding = embed_query(query)
 
-    dense_results = search_qdrant(
+    results = search_qdrant(
         query_embedding,
-        top_k=3
+        top_k=10
     )
 
     print("\n------- DENSE RESULTS -------")
 
-    for i, result in enumerate(dense_results, start=1):
+    for i, result in enumerate(results, start=1):
         print(f"\nDENSE RESULT {i}")
         print("Score:", result.score)
         print("Document:", result.payload["filename"])
@@ -82,20 +85,19 @@ for query in queries:
         print("Text:")
         print(result.payload["text"])
 
+    return results
 
-    # -----------------------
-    # BM25 RETRIEVAL
-    # -----------------------
 
-    bm25_results = search_bm25(
+def test_bm25(query):
+    results = search_bm25(
         query,
         chunks,
-        top_k=3
+        top_k=10
     )
 
     print("\n------- BM25 RESULTS -------")
 
-    for i, result in enumerate(bm25_results, start=1):
+    for i, result in enumerate(results, start=1):
         chunk = result["chunk"]
 
         print(f"\nBM25 RESULT {i}")
@@ -105,23 +107,104 @@ for query in queries:
         print("Text:")
         print(chunk["text"])
 
-
-hybrid_results = reciprocal_rank_fusion(
-    dense_results,
-    bm25_results,
-    top_k=3
-)
+    return results
 
 
-print("\n------- HYBRID / RRF RESULTS -------")
+def test_hybrid(query):
+    query_embedding = embed_query(query)
 
-for i, result in enumerate(hybrid_results, start=1):
-    chunk = result["chunk"]
+    dense_results = search_qdrant(
+        query_embedding,
+        top_k=10
+    )
 
-    print(f"\nHYBRID RESULT {i}")
-    print("RRF Score:", result["score"])
-    print("Document:", chunk["filename"])
-    print("Page:", chunk["page"])
+    bm25_results = search_bm25(
+        query,
+        chunks,
+        top_k=10
+    )
 
-    print("\nText:")
-    print(chunk["text"])
+    results = reciprocal_rank_fusion(
+        dense_results,
+        bm25_results,
+        top_k=10
+    )
+
+    print("\n------- HYBRID / RRF RESULTS -------")
+
+    for i, result in enumerate(results, start=1):
+        chunk = result["chunk"]
+
+        print(f"\nHYBRID RESULT {i}")
+        print("RRF Score:", result["score"])
+        print("Document:", chunk["filename"])
+        print("Page:", chunk["page"])
+        print("Text:")
+        print(chunk["text"])
+
+    return results
+
+
+def test_reranker(query):
+    query_embedding = embed_query(query)
+
+    dense_results = search_qdrant(
+        query_embedding,
+        top_k=10
+    )
+
+    bm25_results = search_bm25(
+        query,
+        chunks,
+        top_k=10
+    )
+
+    hybrid_results = reciprocal_rank_fusion(
+        dense_results,
+        bm25_results,
+        top_k=10
+    )
+
+    results = rerank(
+        query,
+        hybrid_results,
+        top_k=3
+    )
+
+    print("\n------- RERANKED RESULTS -------")
+
+    for i, result in enumerate(results, start=1):
+        chunk = result["chunk"]
+
+        print(f"\nRERANKED RESULT {i}")
+        print("QUERY:", query)
+        print("Reranker Score:", result["score"])
+        print("Document:", chunk["filename"])
+        print("Page:", chunk["page"])
+        print("Text:")
+        print(chunk["text"])
+
+    return results
+
+
+# =========================================================
+# RUN TESTS
+# =========================================================
+
+for query in queries:
+
+    print("\n\n========================================")
+    print("QUERY:", query)
+    print("========================================")
+
+    if RUN_DENSE:
+        test_dense(query)
+
+    if RUN_BM25:
+        test_bm25(query)
+
+    if RUN_HYBRID:
+        test_hybrid(query)
+
+    if RUN_RERANKER:
+        test_reranker(query)
