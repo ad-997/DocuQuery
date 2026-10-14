@@ -61,7 +61,6 @@ Open `http://127.0.0.1:8000/` for the health message and `http://127.0.0.1:8000/
 
 ## Current limits
 
-- The chunker's `return chunks` is inside the page loop, so the current implementation only chunks the first page. Multi-page retrieval needs a fix before it can be claimed.
 - The loader expects extractable text; scanned PDFs need OCR, and empty extraction needs handling.
 - Retrieval covers the document loaded by the script and keeps embeddings in memory.
 - Chunk-size/overlap validation, dependency locking and automated regression checks are still needed.
