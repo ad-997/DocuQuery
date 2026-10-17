@@ -1,34 +1,38 @@
-from app.ingestion.pdf_loader import load_pdf
-from app.ingestion.chunker import chunk_pages
-from app.ingestion.metadata import extract_metadata
+from app.ingestion.pipeline import load_corpus_chunks
 
-from app.embedding.embedder import embed_chunks, embed_query
+from app.generation.generator import generate_answer
+
+from app.generation.context_builder import build_context
+
+from app.embedding.embedder import embed_query
 
 from app.retrieval.sparse import search_bm25
 from app.retrieval.rrf import reciprocal_rank_fusion
 
 from app.reranking.reranker import rerank
 
-from app.vectorstore.qdrant_store import (
-    create_collection,
-    upsert_chunks,
-    search_qdrant
-)
+from app.vectorstore.qdrant_store import search_qdrant
 
 
 # =========================================================
 # CONFIG
 # =========================================================
 
-file_path = "/Users/ad/DocuQuery/data/raw/HR/hr-006_parental_leave_guide.pdf"
+DATA_DIRECTORY = "/Users/ad/DocuQuery/data/raw"
 
 queries = [
     "How much parental leave can an employee take?",
     "Who is eligible for parental leave?",
-    "When does the parental leave policy become effective?"
+    "When does the parental leave policy become effective?",
+    "Does a legal hold allow financial close records to be deleted after the normal seven-year retention period?",
+    "If financial close records have reached the end of their seven-year retention period but are currently under a legal hold, what should the company do and why?",
+    "How did the annual leave allowance change from the 2024 policy to the current policy?"
+    
 ]
 
+
 # Choose what you want to test
+
 RUN_DENSE = False
 RUN_BM25 = False
 RUN_HYBRID = False
@@ -36,38 +40,31 @@ RUN_RERANKER = True
 
 
 # =========================================================
-# INGESTION
+# LOAD CORPUS FOR BM25
 # =========================================================
 
-create_collection()
+print("\n========================================")
+print("LOADING DOCUMENT CORPUS")
+print("========================================")
 
-metadata = extract_metadata(file_path)
+# Important:
+# This reads PDFs and creates chunks for BM25.
+# It DOES NOT generate embeddings.
+# It DOES NOT insert anything into Qdrant.
 
-pages = load_pdf(file_path)
-
-chunks = chunk_pages(
-    pages,
-    metadata,
-    chunk_size=500,
-    overlap=100
+chunks = load_corpus_chunks(
+    DATA_DIRECTORY
 )
 
-chunk_embeddings = embed_chunks(chunks)
-
-upsert_chunks(
-    chunks,
-    chunk_embeddings
-)
-
-print("Total pages:", len(pages))
-print("Total chunks:", len(chunks))
+print("Total corpus chunks:", len(chunks))
 
 
 # =========================================================
-# TEST FUNCTIONS
+# DENSE RETRIEVAL TEST
 # =========================================================
 
 def test_dense(query):
+
     query_embedding = embed_query(query)
 
     results = search_qdrant(
@@ -78,17 +75,39 @@ def test_dense(query):
     print("\n------- DENSE RESULTS -------")
 
     for i, result in enumerate(results, start=1):
+
         print(f"\nDENSE RESULT {i}")
-        print("Score:", result.score)
-        print("Document:", result.payload["filename"])
-        print("Page:", result.payload["page"])
+
+        print(
+            "Score:",
+            result.score
+        )
+
+        print(
+            "Document:",
+            result.payload["filename"]
+        )
+
+        print(
+            "Page:",
+            result.payload["page"]
+        )
+
         print("Text:")
-        print(result.payload["text"])
+
+        print(
+            result.payload["text"]
+        )
 
     return results
 
 
+# =========================================================
+# BM25 RETRIEVAL TEST
+# =========================================================
+
 def test_bm25(query):
+
     results = search_bm25(
         query,
         chunks,
@@ -98,31 +117,65 @@ def test_bm25(query):
     print("\n------- BM25 RESULTS -------")
 
     for i, result in enumerate(results, start=1):
+
         chunk = result["chunk"]
 
         print(f"\nBM25 RESULT {i}")
-        print("Score:", result["score"])
-        print("Document:", chunk["filename"])
-        print("Page:", chunk["page"])
+
+        print(
+            "Score:",
+            result["score"]
+        )
+
+        print(
+            "Document:",
+            chunk["filename"]
+        )
+
+        print(
+            "Page:",
+            chunk["page"]
+        )
+
         print("Text:")
-        print(chunk["text"])
+
+        print(
+            chunk["text"]
+        )
 
     return results
 
 
+# =========================================================
+# HYBRID / RRF TEST
+# =========================================================
+
 def test_hybrid(query):
+
     query_embedding = embed_query(query)
+
+    # -------------------------------------
+    # Dense retrieval
+    # -------------------------------------
 
     dense_results = search_qdrant(
         query_embedding,
         top_k=10
     )
 
+    # -------------------------------------
+    # BM25 retrieval
+    # -------------------------------------
+
     bm25_results = search_bm25(
         query,
         chunks,
         top_k=10
     )
+
+    # -------------------------------------
+    # Reciprocal Rank Fusion
+    # -------------------------------------
 
     results = reciprocal_rank_fusion(
         dense_results,
@@ -133,25 +186,55 @@ def test_hybrid(query):
     print("\n------- HYBRID / RRF RESULTS -------")
 
     for i, result in enumerate(results, start=1):
+
         chunk = result["chunk"]
 
         print(f"\nHYBRID RESULT {i}")
-        print("RRF Score:", result["score"])
-        print("Document:", chunk["filename"])
-        print("Page:", chunk["page"])
+
+        print(
+            "RRF Score:",
+            result["score"]
+        )
+
+        print(
+            "Document:",
+            chunk["filename"]
+        )
+
+        print(
+            "Page:",
+            chunk["page"]
+        )
+
         print("Text:")
-        print(chunk["text"])
+
+        print(
+            chunk["text"]
+        )
 
     return results
 
 
+# =========================================================
+# RERANKER TEST
+# =========================================================
+
 def test_reranker(query):
+
     query_embedding = embed_query(query)
+
+    # -------------------------------------
+    # Dense candidates
+    # -------------------------------------
 
     dense_results = search_qdrant(
         query_embedding,
         top_k=10
     )
+
+    # -------------------------------------
+    # BM25 candidates
+    # -------------------------------------
 
     bm25_results = search_bm25(
         query,
@@ -159,11 +242,19 @@ def test_reranker(query):
         top_k=10
     )
 
+    # -------------------------------------
+    # RRF
+    # -------------------------------------
+
     hybrid_results = reciprocal_rank_fusion(
         dense_results,
         bm25_results,
         top_k=10
     )
+
+    # -------------------------------------
+    # Cross-encoder reranking
+    # -------------------------------------
 
     results = rerank(
         query,
@@ -174,15 +265,36 @@ def test_reranker(query):
     print("\n------- RERANKED RESULTS -------")
 
     for i, result in enumerate(results, start=1):
+
         chunk = result["chunk"]
 
         print(f"\nRERANKED RESULT {i}")
-        print("QUERY:", query)
-        print("Reranker Score:", result["score"])
-        print("Document:", chunk["filename"])
-        print("Page:", chunk["page"])
+
+        print(
+            "QUERY:",
+            query
+        )
+
+        print(
+            "Reranker Score:",
+            result["score"]
+        )
+
+        print(
+            "Document:",
+            chunk["filename"]
+        )
+
+        print(
+            "Page:",
+            chunk["page"]
+        )
+
         print("Text:")
-        print(chunk["text"])
+
+        print(
+            chunk["text"]
+        )
 
     return results
 
@@ -207,4 +319,27 @@ for query in queries:
         test_hybrid(query)
 
     if RUN_RERANKER:
-        test_reranker(query)
+
+        reranked_results = test_reranker(
+            query
+        )
+
+        # -------------------------------------
+        # BUILD LLM CONTEXT
+        # -------------------------------------
+
+        context = build_context(
+            reranked_results
+        )
+
+        print("\n------- LLM CONTEXT -------")
+
+        print(context)
+        
+    answer = generate_answer(
+    query,
+    context
+)
+
+    print("\n------- GENERATED ANSWER -------")
+    print(answer)
