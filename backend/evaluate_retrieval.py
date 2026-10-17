@@ -1,7 +1,6 @@
 import json
 
 from app.embedding.embedder import embed_query
-
 from app.ingestion.pipeline import ingest_directory
 
 from app.evaluation.retrieval_metrics import (
@@ -13,6 +12,11 @@ from app.vectorstore.qdrant_store import (
     reset_collection,
     search_qdrant
 )
+
+from app.reranking.reranker import rerank
+
+from app.retrieval.sparse import search_bm25
+from app.retrieval.rrf import reciprocal_rank_fusion
 
 
 # =========================================
@@ -47,7 +51,6 @@ print("========================================")
 
 chunks = ingest_directory(DATA_DIRECTORY)
 
-
 print("\n========================================")
 print("CORPUS INGESTION COMPLETE")
 print("========================================")
@@ -73,16 +76,16 @@ print(
 )
 
 
-# =========================================
+# =========================================================
 # DENSE RETRIEVAL EVALUATION
-# =========================================
+# =========================================================
 
-recall_1_scores = []
-recall_3_scores = []
-recall_5_scores = []
-rr_scores = []
+dense_recall_1_scores = []
+dense_recall_3_scores = []
+dense_recall_5_scores = []
+dense_rr_scores = []
 
-evaluated_queries = 0
+dense_evaluated_queries = 0
 skipped_acl_queries = 0
 
 
@@ -90,83 +93,49 @@ for item in evaluation_queries:
 
     query_id = item["query_id"]
 
-
-    # =====================================
-    # SKIP ACL / SECURITY QUERIES
-    # =====================================
-
+    # Security evaluation will be handled separately
     if query_id.startswith("ACL-"):
-
         skipped_acl_queries += 1
-
-        print("\n========================================")
-        print("SKIPPING SECURITY QUERY:", query_id)
-        print("========================================")
-
         continue
 
-
-    evaluated_queries += 1
-
-
-    # =====================================
-    # GET QUERY INFORMATION
-    # =====================================
+    dense_evaluated_queries += 1
 
     query = item["question"]
+    expected_document_ids = item["expected_document_ids"]
 
-    expected_document_ids = (
-        item["expected_document_ids"]
-    )
-
-
-    # =====================================
+    # -------------------------------------
     # CREATE QUERY EMBEDDING
-    # =====================================
+    # -------------------------------------
 
     query_embedding = embed_query(query)
 
-
-    # =====================================
-    # DENSE SEARCH USING QDRANT
-    # =====================================
+    # -------------------------------------
+    # DENSE SEARCH
+    # -------------------------------------
 
     dense_results = search_qdrant(
         query_embedding,
         top_k=5
     )
 
-
-    # =====================================
-    # CONVERT QDRANT RESULTS
-    # =====================================
+    # -------------------------------------
+    # NORMALIZE RESULT FORMAT
+    # -------------------------------------
 
     results = []
 
     for result in dense_results:
 
         results.append({
-            "document_id": (
-                result.payload["document_id"]
-            ),
-
-            "page": (
-                result.payload["page"]
-            ),
-
-            "text": (
-                result.payload["text"]
-            ),
-
-            "score": (
-                result.score
-            )
+            "document_id": result.payload["document_id"],
+            "page": result.payload["page"],
+            "text": result.payload["text"],
+            "score": result.score
         })
 
-
-    # =====================================
-    # CALCULATE METRICS
-    # =====================================
+    # -------------------------------------
+    # METRICS
+    # -------------------------------------
 
     recall_1 = document_recall_at_k(
         results,
@@ -174,13 +143,11 @@ for item in evaluation_queries:
         k=1
     )
 
-
     recall_3 = document_recall_at_k(
         results,
         expected_document_ids,
         k=3
     )
-
 
     recall_5 = document_recall_at_k(
         results,
@@ -188,141 +155,511 @@ for item in evaluation_queries:
         k=5
     )
 
-
-    reciprocal_rank_score = reciprocal_rank(
+    rr = reciprocal_rank(
         results,
         expected_document_ids
     )
 
-
-    # =====================================
-    # SAVE SCORES
-    # =====================================
-
-    recall_1_scores.append(
-        recall_1
-    )
-
-    recall_3_scores.append(
-        recall_3
-    )
-
-    recall_5_scores.append(
-        recall_5
-    )
-
-    rr_scores.append(
-        reciprocal_rank_score
-    )
-
-
-    # =====================================
-    # PRINT QUERY RESULT
-    # =====================================
-
-    print("\n========================================")
-    print("Query:", query_id)
-    print("========================================")
-
-    print(query)
-
-    print(
-        "\nExpected documents:",
-        expected_document_ids
-    )
-
-
-    print("\nRetrieved documents:")
-
-
-    for rank, result in enumerate(
-        results,
-        start=1
-    ):
-
-        print(
-            rank,
-            result["document_id"],
-            result["score"]
-        )
-
-
-    print("\nDocument Recall@1:", recall_1)
-    print("Document Recall@3:", recall_3)
-    print("Document Recall@5:", recall_5)
-
-    print(
-        "Reciprocal Rank:",
-        reciprocal_rank_score
-    )
+    dense_recall_1_scores.append(recall_1)
+    dense_recall_3_scores.append(recall_3)
+    dense_recall_5_scores.append(recall_5)
+    dense_rr_scores.append(rr)
 
 
 # =========================================
-# CALCULATE FINAL METRICS
+# CALCULATE DENSE FINAL METRICS
 # =========================================
 
 dense_recall_1 = (
-    sum(recall_1_scores)
-    / evaluated_queries
+    sum(dense_recall_1_scores)
+    / dense_evaluated_queries
 )
 
 dense_recall_3 = (
-    sum(recall_3_scores)
-    / evaluated_queries
+    sum(dense_recall_3_scores)
+    / dense_evaluated_queries
 )
 
 dense_recall_5 = (
-    sum(recall_5_scores)
-    / evaluated_queries
+    sum(dense_recall_5_scores)
+    / dense_evaluated_queries
 )
 
 dense_mrr = (
-    sum(rr_scores)
-    / evaluated_queries
+    sum(dense_rr_scores)
+    / dense_evaluated_queries
 )
 
-
-# =========================================
-# FINAL RESULTS
-# =========================================
 
 print("\n\n========================================")
 print("DENSE RETRIEVAL RESULTS")
 print("========================================")
 
+print(f"Evaluated Queries: {dense_evaluated_queries}")
+print(f"Skipped ACL Queries: {skipped_acl_queries}")
+print(f"Document Recall@1: {dense_recall_1:.3f}")
+print(f"Document Recall@3: {dense_recall_3:.3f}")
+print(f"Document Recall@5: {dense_recall_5:.3f}")
+print(f"MRR:               {dense_mrr:.3f}")
+
+
+# =========================================================
+# BM25 RETRIEVAL EVALUATION
+# =========================================================
+
+bm25_recall_1_scores = []
+bm25_recall_3_scores = []
+bm25_recall_5_scores = []
+bm25_rr_scores = []
+
+bm25_evaluated_queries = 0
+
+
+for item in evaluation_queries:
+
+    query_id = item["query_id"]
+
+    if query_id.startswith("ACL-"):
+        continue
+
+    bm25_evaluated_queries += 1
+
+    query = item["question"]
+    expected_document_ids = item["expected_document_ids"]
+
+    # -------------------------------------
+    # BM25 SEARCH
+    # -------------------------------------
+
+    bm25_results = search_bm25(
+        query,
+        chunks,
+        top_k=5
+    )
+
+    # -------------------------------------
+    # NORMALIZE RESULT FORMAT
+    # -------------------------------------
+
+    results = []
+
+    for result in bm25_results:
+
+        chunk = result["chunk"]
+
+        results.append({
+            "document_id": chunk["document_id"],
+            "page": chunk["page"],
+            "text": chunk["text"],
+            "score": result["score"]
+        })
+
+    # -------------------------------------
+    # METRICS
+    # -------------------------------------
+
+    recall_1 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=1
+    )
+
+    recall_3 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=3
+    )
+
+    recall_5 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=5
+    )
+
+    rr = reciprocal_rank(
+        results,
+        expected_document_ids
+    )
+
+    bm25_recall_1_scores.append(recall_1)
+    bm25_recall_3_scores.append(recall_3)
+    bm25_recall_5_scores.append(recall_5)
+    bm25_rr_scores.append(rr)
+
+
+# =========================================
+# CALCULATE BM25 FINAL METRICS
+# =========================================
+
+bm25_recall_1 = (
+    sum(bm25_recall_1_scores)
+    / bm25_evaluated_queries
+)
+
+bm25_recall_3 = (
+    sum(bm25_recall_3_scores)
+    / bm25_evaluated_queries
+)
+
+bm25_recall_5 = (
+    sum(bm25_recall_5_scores)
+    / bm25_evaluated_queries
+)
+
+bm25_mrr = (
+    sum(bm25_rr_scores)
+    / bm25_evaluated_queries
+)
+
+
+print("\n\n========================================")
+print("BM25 RETRIEVAL RESULTS")
+print("========================================")
+
+print(f"Evaluated Queries: {bm25_evaluated_queries}")
+print(f"Document Recall@1: {bm25_recall_1:.3f}")
+print(f"Document Recall@3: {bm25_recall_3:.3f}")
+print(f"Document Recall@5: {bm25_recall_5:.3f}")
+print(f"MRR:               {bm25_mrr:.3f}")
+
+
+# =========================================================
+# HYBRID / RRF RETRIEVAL EVALUATION
+# =========================================================
+
+rrf_recall_1_scores = []
+rrf_recall_3_scores = []
+rrf_recall_5_scores = []
+rrf_rr_scores = []
+
+rrf_evaluated_queries = 0
+
+
+for item in evaluation_queries:
+
+    query_id = item["query_id"]
+
+    if query_id.startswith("ACL-"):
+        continue
+
+    rrf_evaluated_queries += 1
+
+    query = item["question"]
+    expected_document_ids = item["expected_document_ids"]
+
+    # -------------------------------------
+    # DENSE CANDIDATES
+    # -------------------------------------
+
+    query_embedding = embed_query(query)
+
+    dense_results = search_qdrant(
+        query_embedding,
+        top_k=10
+    )
+
+    # -------------------------------------
+    # BM25 CANDIDATES
+    # -------------------------------------
+
+    bm25_results = search_bm25(
+        query,
+        chunks,
+        top_k=10
+    )
+
+    # -------------------------------------
+    # RECIPROCAL RANK FUSION
+    # -------------------------------------
+
+    hybrid_results = reciprocal_rank_fusion(
+        dense_results,
+        bm25_results,
+        top_k=5
+    )
+
+    # -------------------------------------
+    # NORMALIZE RESULT FORMAT
+    # -------------------------------------
+
+    results = []
+
+    for result in hybrid_results:
+
+        chunk = result["chunk"]
+
+        results.append({
+            "document_id": chunk["document_id"],
+            "page": chunk["page"],
+            "text": chunk["text"],
+            "score": result["score"]
+        })
+
+    # -------------------------------------
+    # METRICS
+    # -------------------------------------
+
+    recall_1 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=1
+    )
+
+    recall_3 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=3
+    )
+
+    recall_5 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=5
+    )
+
+    rr = reciprocal_rank(
+        results,
+        expected_document_ids
+    )
+
+    rrf_recall_1_scores.append(recall_1)
+    rrf_recall_3_scores.append(recall_3)
+    rrf_recall_5_scores.append(recall_5)
+    rrf_rr_scores.append(rr)
+
+
+# =========================================
+# CALCULATE RRF FINAL METRICS
+# =========================================
+
+rrf_recall_1 = (
+    sum(rrf_recall_1_scores)
+    / rrf_evaluated_queries
+)
+
+rrf_recall_3 = (
+    sum(rrf_recall_3_scores)
+    / rrf_evaluated_queries
+)
+
+rrf_recall_5 = (
+    sum(rrf_recall_5_scores)
+    / rrf_evaluated_queries
+)
+
+rrf_mrr = (
+    sum(rrf_rr_scores)
+    / rrf_evaluated_queries
+)
+
+
+print("\n\n========================================")
+print("HYBRID / RRF RETRIEVAL RESULTS")
+print("========================================")
+
+print(f"Evaluated Queries: {rrf_evaluated_queries}")
+print(f"Document Recall@1: {rrf_recall_1:.3f}")
+print(f"Document Recall@3: {rrf_recall_3:.3f}")
+print(f"Document Recall@5: {rrf_recall_5:.3f}")
+print(f"MRR:               {rrf_mrr:.3f}")
+
+
+# =========================================================
+# FINAL RETRIEVAL COMPARISON
+# =========================================================
+
+print("\n\n========================================")
+print("RETRIEVAL COMPARISON")
+print("========================================")
+
 print(
-    f"Total Dataset Queries: "
-    f"{len(evaluation_queries)}"
+    f"{'Method':<12}"
+    f"{'R@1':>10}"
+    f"{'R@3':>10}"
+    f"{'R@5':>10}"
+    f"{'MRR':>10}"
+)
+
+print("-" * 52)
+
+print(
+    f"{'Dense':<12}"
+    f"{dense_recall_1:>10.3f}"
+    f"{dense_recall_3:>10.3f}"
+    f"{dense_recall_5:>10.3f}"
+    f"{dense_mrr:>10.3f}"
 )
 
 print(
-    f"Evaluated Queries: "
-    f"{evaluated_queries}"
+    f"{'BM25':<12}"
+    f"{bm25_recall_1:>10.3f}"
+    f"{bm25_recall_3:>10.3f}"
+    f"{bm25_recall_5:>10.3f}"
+    f"{bm25_mrr:>10.3f}"
 )
 
 print(
-    f"Skipped ACL Queries: "
-    f"{skipped_acl_queries}"
+    f"{'RRF':<12}"
+    f"{rrf_recall_1:>10.3f}"
+    f"{rrf_recall_3:>10.3f}"
+    f"{rrf_recall_5:>10.3f}"
+    f"{rrf_mrr:>10.3f}"
 )
 
-print()
+# =========================================================
+# RERANKER EVALUATION
+# =========================================================
 
-print(
-    f"Document Recall@1: "
-    f"{dense_recall_1:.3f}"
+reranker_recall_1_scores = []
+reranker_recall_3_scores = []
+reranker_recall_5_scores = []
+reranker_rr_scores = []
+
+reranker_evaluated_queries = 0
+
+
+for item in evaluation_queries:
+
+    query_id = item["query_id"]
+
+    if query_id.startswith("ACL-"):
+        continue
+
+    reranker_evaluated_queries += 1
+
+    query = item["question"]
+    expected_document_ids = item["expected_document_ids"]
+
+    # -------------------------------------
+    # DENSE CANDIDATES
+    # -------------------------------------
+
+    query_embedding = embed_query(query)
+
+    dense_results = search_qdrant(
+        query_embedding,
+        top_k=10
+    )
+
+    # -------------------------------------
+    # BM25 CANDIDATES
+    # -------------------------------------
+
+    bm25_results = search_bm25(
+        query,
+        chunks,
+        top_k=10
+    )
+
+    # -------------------------------------
+    # RRF CANDIDATES
+    # -------------------------------------
+
+    hybrid_results = reciprocal_rank_fusion(
+        dense_results,
+        bm25_results,
+        top_k=10
+    )
+
+    # -------------------------------------
+    # CROSS-ENCODER RERANKING
+    # -------------------------------------
+
+    reranked_results = rerank(
+        query,
+        hybrid_results,
+        top_k=5
+    )
+
+    # -------------------------------------
+    # NORMALIZE RESULT FORMAT
+    # -------------------------------------
+
+    results = []
+
+    for result in reranked_results:
+
+        chunk = result["chunk"]
+
+        results.append({
+            "document_id": chunk["document_id"],
+            "page": chunk["page"],
+            "text": chunk["text"],
+            "score": result["score"]
+        })
+
+    # -------------------------------------
+    # METRICS
+    # -------------------------------------
+
+    recall_1 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=1
+    )
+
+    recall_3 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=3
+    )
+
+    recall_5 = document_recall_at_k(
+        results,
+        expected_document_ids,
+        k=5
+    )
+
+    rr = reciprocal_rank(
+        results,
+        expected_document_ids
+    )
+
+    reranker_recall_1_scores.append(recall_1)
+    reranker_recall_3_scores.append(recall_3)
+    reranker_recall_5_scores.append(recall_5)
+    reranker_rr_scores.append(rr)
+
+
+# =========================================
+# CALCULATE RERANKER FINAL METRICS
+# =========================================
+
+reranker_recall_1 = (
+    sum(reranker_recall_1_scores)
+    / reranker_evaluated_queries
 )
 
-print(
-    f"Document Recall@3: "
-    f"{dense_recall_3:.3f}"
+reranker_recall_3 = (
+    sum(reranker_recall_3_scores)
+    / reranker_evaluated_queries
 )
 
-print(
-    f"Document Recall@5: "
-    f"{dense_recall_5:.3f}"
+reranker_recall_5 = (
+    sum(reranker_recall_5_scores)
+    / reranker_evaluated_queries
 )
 
+reranker_mrr = (
+    sum(reranker_rr_scores)
+    / reranker_evaluated_queries
+)
+
+
+print("\n\n========================================")
+print("RERANKER RESULTS")
+print("========================================")
+
+print(f"Evaluated Queries: {reranker_evaluated_queries}")
+print(f"Document Recall@1: {reranker_recall_1:.3f}")
+print(f"Document Recall@3: {reranker_recall_3:.3f}")
+print(f"Document Recall@5: {reranker_recall_5:.3f}")
+print(f"MRR:               {reranker_mrr:.3f}")
+
 print(
-    f"MRR:               "
-    f"{dense_mrr:.3f}"
+    f"{'Reranker':<12}"
+    f"{reranker_recall_1:>10.3f}"
+    f"{reranker_recall_3:>10.3f}"
+    f"{reranker_recall_5:>10.3f}"
+    f"{reranker_mrr:>10.3f}"
 )
