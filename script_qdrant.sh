@@ -11,7 +11,7 @@ case "$1" in
         --name "$CONTAINER_NAME" \
         -p 6333:6333 \
         -p 6334:6334 \
-        -v "$(pwd)/qdrant_storage:/qdrant/storage" \
+        -v "$(cd "$(dirname "$0")" && pwd)/qdrant_storage:/qdrant/storage" \
         qdrant/qdrant
     fi
     ;;
@@ -25,6 +25,7 @@ case "$1" in
     ;;
 
   *)
-    echo "Usage: ./scripts/qdrant.sh {start|stop|status}"
+    echo "Usage: ./script_qdrant.sh {start|stop|status}"
+    exit 1
     ;;
 esac

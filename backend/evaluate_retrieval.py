@@ -111,7 +111,7 @@ def main():
     from app.embedding.embedder import embed_query
     from app.ingestion.pipeline import ingest_directory
     from app.reranking.reranker import rerank
-    from app.retrieval.sparse import search_bm25
+    from app.retrieval.sparse import BM25Retriever
     from app.vectorstore.qdrant_store import client
     from qdrant_client.models import Distance, VectorParams
 
@@ -126,7 +126,11 @@ def main():
         chunks = ingest_directory(args.data_directory)
         if not chunks:
             raise ValueError("No PDF chunks found in data directory")
-        report = evaluate_queries(queries, chunks, embed_query, qdrant_store.search_qdrant, search_bm25, rerank)
+        retriever = BM25Retriever(chunks)
+        report = evaluate_queries(
+            queries, chunks, embed_query, qdrant_store.search_qdrant,
+            lambda query, chunks, top_k: retriever.search(query, top_k=top_k), rerank
+        )
         report["configuration"].update({"data_directory": str(args.data_directory.resolve()),
                                           "evaluation_file": str(args.evaluation_file.resolve()),
                                           "corpus_chunks": len(chunks)})

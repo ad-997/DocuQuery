@@ -35,9 +35,12 @@ def load_document_chunks(file_path):
 def load_corpus_chunks(directory):
     directory = Path(directory)
 
+    if not directory.is_dir():
+        raise ValueError(f"Corpus directory does not exist: {directory}")
+
     all_chunks = []
 
-    for file_path in directory.rglob("*.pdf"):
+    for file_path in sorted(path for path in directory.rglob("*") if path.is_file() and path.suffix.lower() == ".pdf"):
         chunks = load_document_chunks(file_path)
 
         all_chunks.extend(chunks)
@@ -51,6 +54,9 @@ def load_corpus_chunks(directory):
 
 def ingest_document(file_path):
     chunks = load_document_chunks(file_path)
+
+    if not chunks:
+        raise ValueError("PDF contains no extractable text; OCR may be required")
 
     embeddings = embed_chunks(chunks)
 
@@ -69,9 +75,12 @@ def ingest_document(file_path):
 def ingest_directory(directory):
     directory = Path(directory)
 
+    if not directory.is_dir():
+        raise ValueError(f"Corpus directory does not exist: {directory}")
+
     all_chunks = []
 
-    for file_path in directory.rglob("*.pdf"):
+    for file_path in sorted(path for path in directory.rglob("*") if path.is_file() and path.suffix.lower() == ".pdf"):
         print(f"Ingesting: {file_path}")
 
         chunks = ingest_document(file_path)

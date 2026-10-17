@@ -6,7 +6,7 @@ from app.generation.context_builder import build_context
 
 from app.embedding.embedder import embed_query
 
-from app.retrieval.sparse import search_bm25
+from app.retrieval.sparse import BM25Retriever
 from app.retrieval.rrf import reciprocal_rank_fusion
 
 from app.reranking.reranker import rerank
@@ -18,7 +18,9 @@ from app.vectorstore.qdrant_store import search_qdrant
 # CONFIG
 # =========================================================
 
-DATA_DIRECTORY = "/Users/ad/DocuQuery/data/raw"
+from pathlib import Path
+
+DATA_DIRECTORY = Path(__file__).resolve().parents[1] / "data/raw"
 
 queries = [
     "How much parental leave can an employee take?",
@@ -57,6 +59,7 @@ chunks = load_corpus_chunks(
 )
 
 print("Total corpus chunks:", len(chunks))
+bm25_retriever = BM25Retriever(chunks)
 
 
 # =========================================================
@@ -108,9 +111,8 @@ def test_dense(query):
 
 def test_bm25(query):
 
-    results = search_bm25(
+    results = bm25_retriever.search(
         query,
-        chunks,
         top_k=10
     )
 
@@ -167,9 +169,8 @@ def test_hybrid(query):
     # BM25 retrieval
     # -------------------------------------
 
-    bm25_results = search_bm25(
+    bm25_results = bm25_retriever.search(
         query,
-        chunks,
         top_k=10
     )
 
@@ -236,9 +237,8 @@ def test_reranker(query):
     # BM25 candidates
     # -------------------------------------
 
-    bm25_results = search_bm25(
+    bm25_results = bm25_retriever.search(
         query,
-        chunks,
         top_k=10
     )
 
@@ -336,10 +336,6 @@ for query in queries:
 
         print(context)
         
-    answer = generate_answer(
-    query,
-    context
-)
-
-    print("\n------- GENERATED ANSWER -------")
-    print(answer)
+        answer = generate_answer(query, context)
+        print("\n------- GENERATED ANSWER -------")
+        print(answer)

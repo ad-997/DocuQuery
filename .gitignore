@@ -13,9 +13,6 @@ venv/
 env/
 ENV/
 
-# Markdown
-STEPS.md
-
 # Python packaging
 build/
 dist/
