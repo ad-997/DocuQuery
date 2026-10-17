@@ -1,10 +1,11 @@
 from pathlib import Path
 
-from app.ingestion.pdf_loader import load_pdf
-from app.ingestion.metadata import extract_metadata
-from app.ingestion.chunker import chunk_pages
-from app.embedding.embedder import embed_chunks
-from app.vectorstore.qdrant_store import upsert_chunks
+from ..embedding.embedder import embed_chunks
+from ..vectorstore.qdrant_store import upsert_chunks
+
+from .pdf_loader import load_pdf
+from .metadata import extract_metadata
+from .chunker import chunk_pages
 
 
 # =========================================================
