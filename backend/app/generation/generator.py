@@ -2,12 +2,6 @@ import os
 from dotenv import load_dotenv
 from groq import Groq
 
-load_dotenv()
-
-client = Groq(
-    api_key=os.getenv("GROQ_API_KEY")
-)
-
 SYSTEM_PROMPT = """
 You are DocuQuery, an enterprise knowledge assistant.
 
@@ -26,6 +20,8 @@ Rules:
 
 
 def generate_answer(question, context):
+    load_dotenv()
+    client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
     prompt = f"""
 CONTEXT:
