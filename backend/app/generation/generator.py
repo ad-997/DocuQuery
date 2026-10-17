@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 from groq import Groq
 
@@ -20,7 +21,9 @@ Rules:
 
 
 def generate_answer(question, context):
-    load_dotenv()
+    if not context.strip():
+        return "I could not find enough information in the available documents."
+    load_dotenv(Path(__file__).resolve().parents[3] / ".env")
     client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
     prompt = f"""
@@ -38,7 +41,7 @@ Answer using only the supplied context.
 """
 
     response = client.chat.completions.create(
-        model="openai/gpt-oss-20b",
+        model=os.getenv("GROQ_MODEL", "openai/gpt-oss-20b"),
 
         messages=[
             {

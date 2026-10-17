@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pypdf
+sentence-transformers
+numpy
+qdrant-client
+rank-bm25
+groq
+python-dotenv
+python-multipart
+httpx
+sqlalchemy>=2,<3
+psycopg[binary]>=3,<4

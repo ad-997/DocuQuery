@@ -1,89 +1,90 @@
 # DocuQuery
 
-An early Python prototype for finding relevant passages in PDFs using sentence embeddings. The goal is to make policies, SOPs and technical documents searchable even when a question uses different words from the source.
+A local Python RAG prototype for querying PDF policies, SOPs and technical documents. It combines Qdrant dense search, BM25, reciprocal rank fusion and cross-encoder reranking, then asks Groq to answer using retrieved passages with source labels.
 
-**Status: retrieval prototype in development.** This is the beginning of a RAG project. It does not yet generate answers, enforce access permissions or provide a document-search API.
+## Setup
 
-## Implemented
-
-- PDF text extraction with `pypdf`, retaining page numbers.
-- Document metadata derived from the filename and parent folder.
-- Character-based chunks with defaults of 500 characters and 100 characters of overlap.
-- Normalized embeddings using `BAAI/bge-small-en-v1.5` through Sentence Transformers.
-- In-memory top-k retrieval using the dot product of normalized vectors (cosine similarity).
-- A FastAPI application with a root health message.
-- A script that retrieves the top three chunks for a sample parental-leave question.
-
-## Pipeline
-
-```text
-PDF → extract page text → attach metadata → chunk text
-    → embed chunks → embed query → rank by similarity → print matches
-```
-
-The script prints the similarity score, page number, filename and passage. Scores rank matches; they are not measured answer accuracy or calibrated confidence.
-
-## Try the prototype locally
-
-Use a Python environment compatible with Sentence Transformers and PyTorch. Dependencies are currently unpinned; the commands below are a manual setup recipe, not a verified reproducible build.
+From the project root:
 
 ```sh
-git clone https://github.com/ad-997/DocuQuery.git
-cd DocuQuery
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install fastapi uvicorn pypdf sentence-transformers numpy
-cd backend
-python testing_pipeline.py
+python -m pip install -r requirements.txt
+cp .env.example .env
 ```
 
-Run from `backend/`: the script uses the relative path `../data/raw/HR/hr-006_parental_leave_guide.pdf`. The first embedding run downloads the model. Change `file_path` and `query` in the script to explore another document or question.
+Set `GROQ_API_KEY` in `.env`. `GROQ_MODEL` optionally overrides the default `openai/gpt-oss-20b`. Dependencies are listed but not locked. The first retrieval run downloads the embedding and reranking models.
 
-For the separate FastAPI scaffold, from `backend/`:
+Start Docker and Qdrant:
 
 ```sh
-uvicorn app.main:app --reload
+./script_qdrant.sh start
 ```
 
-Open `http://127.0.0.1:8000/` for the health message and `http://127.0.0.1:8000/docs` for the API schema. Retrieval currently runs through the script, not an HTTP endpoint.
+Qdrant listens on localhost:6333 and stores data in `qdrant_storage/`. Stop it with `./script_qdrant.sh stop`.
 
-## Code map
+Index the bundled corpus once before querying:
+
+```sh
+cd backend
+../.venv/bin/python -c 'from app.ingestion.pipeline import ingest_directory; ingest_directory("../data/raw")'
+../.venv/bin/uvicorn app.main:app --reload
+```
+
+Ingestion creates the collection if needed. Restarting the API reads the local PDFs for BM25 lazily; it does not re-embed them. Keep the local corpus and Qdrant collection synchronized.
+
+## API
+
+Open [API documentation](http://127.0.0.1:8000/docs).
+
+- `GET /` and `GET /health`: process liveness; these do not verify Qdrant or Groq.
+- `POST /api/query`: JSON body `{"question": "How much parental leave can an employee take?"}`. Returns `question`, `answer`, and `sources` containing document ID, filename, page and reranker score. Sources correspond in order to `[SOURCE 1]`, `[SOURCE 2]`, etc.
+- `POST /api/documents`: multipart `file` (PDF, at most 20 MiB) and `department`. Supported departments: HR, IT, Security, Compliance, Finance, Engineering, Operations, Sales. Returns 201 on success, 400 for invalid input, 409 for an existing filename and 413 for an oversized upload. Uploads are embedded into Qdrant and refresh the BM25 index.
+
+Blank questions are rejected. PDFs without extractable text are rejected during ingestion; use OCR first. Queries with no evidence return an insufficient-information message without calling Groq. With retrieved evidence, source grounding and insufficient-information handling rely on the model prompt and are not guaranteed.
+
+Run the manual example from the project root:
+
+```sh
+.venv/bin/python backend/app/rag/pipeline.py
+```
+
+`backend/testing_pipeline.py` also supports individual retrieval stages through its `RUN_*` flags. It reads the local corpus but expects Qdrant to be indexed already.
+
+## Pipeline and code map
+
+```text
+PDF → page text → metadata → overlapping chunks → embeddings → Qdrant
+Question → dense search + cached BM25 → RRF → reranker → context → Groq
+```
 
 | Path | Responsibility |
 | --- | --- |
-| `backend/app/ingestion/pdf_loader.py` | Extract page text |
-| `backend/app/ingestion/metadata.py` | Derive document metadata |
-| `backend/app/ingestion/chunker.py` | Split text into overlapping chunks |
-| `backend/app/embedding/embedder.py` | Encode chunks and queries |
-| `backend/app/retrieval/dense.py` | Rank chunks by vector similarity |
-| `backend/testing_pipeline.py` | Run the current single-document example |
-| `data/raw/` | Example PDFs, manifests and evaluation-query fixtures |
+| `backend/app/ingestion/` | PDF extraction, metadata, 500-character chunks with 100-character overlap |
+| `backend/app/embedding/` | Lazy-loaded BGE small embeddings, normalized 384-dimensional vectors |
+| `backend/app/vectorstore/` | Qdrant collection, deterministic point IDs, upserts and search |
+| `backend/app/retrieval/` | Dense baseline, BM25, fusion and diversification experiment |
+| `backend/app/reranking/` | Lazy-loaded cross-encoder |
+| `backend/app/generation/` | Source-labelled context and Groq generation |
+| `backend/app/rag/` | Query orchestration (10 candidates per retriever, 10 fused, 3 final) |
+| `backend/app/api/` | Query and PDF upload endpoints |
+| `backend/app/services/` | Cached BM25 corpus and refresh |
+| `backend/evaluate_retrieval.py` | Retrieval benchmark runner |
+| `backend/tests/` | Regression and evaluation tests |
+| `data/raw/` | Bundled PDF corpus and benchmark fixtures |
 
 ## Retrieval evaluation
 
-The evaluation script compares Dense, BM25, RRF, RRF + Reranker, and
-RRF + Diversification + Reranker against the labelled PDF corpus. It uses a
-separate temporary Qdrant collection and deletes it after the run.
-Start Qdrant on localhost:6333 and install `qdrant-client` and `rank-bm25`
-in addition to the dependencies above, then run from the project root:
+With Qdrant running, from the project root:
 
 ```sh
 .venv/bin/python backend/evaluate_retrieval.py
 PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -v
 ```
 
-The report is saved to `data/retrieval_evaluation.json`, including per-query
-rankings, Recall@1/3/5, MRR@5, improvements, regressions, and candidate diagnostics.
-Use `--help` for data and output paths. ACL queries and queries without expected
-documents are counted separately and excluded from retrieval quality averages.
-This benchmark does not verify access permissions or answer quality.
+Evaluation uses a separate temporary collection and deletes it afterward. It saves per-query results, Recall@1/3/5, MRR@5 and diagnostics to `data/retrieval_evaluation.json`. Use `--help` to override paths. ACL queries and queries without expected documents are excluded from relevance averages. This benchmark does not validate authorization or answer quality.
 
-The original RRF and reranker baselines use 10 candidates from each retriever.
-The diversification experiment uses 30, retains at most two chunks per document,
-and reranks up to 10 candidates into a final top five. It changes both candidate
-depth and document diversity, so differences cannot be attributed to diversity alone.
-The document cap applies before reranking; it does not guarantee every relevant
-document survives into the final five.
+Baseline fusion and reranking use 10 candidates per retriever. Diversification uses depth 30, caps candidates at two chunks per document, then reranks up to 10 into five results. This changes both candidate depth and diversity; results cannot be attributed to diversity alone.
 
 ### Latest local benchmark
 
@@ -104,9 +105,67 @@ remains the comparison baseline. Version-aware retrieval remains future work.
 
 ## Current limits
 
-- No answer generation, permission enforcement, or search API yet.
-- Scanned PDFs need OCR; dependency locking and ingestion validation remain future work.
-- Document versions and current versus archived policies are not filtered yet.
-- The small labelled corpus is a development benchmark, not a general accuracy claim.
+- Users authenticate with expiring bearer tokens. Department checks and document-ID allowlists apply to dense and BM25 retrieval. Use one API worker: the BM25 cache is process-local.
+- API-managed documents have UUIDs and support vector/file deletion. Version selection and archived-policy filtering remain future work. Legacy vectors are excluded until documents are imported.
+- Filesystem, Qdrant and BM25 changes are not transactional; after partial upload failures, reconcile the stored PDF and vector collection before retrying. Upload serialization and cache refresh apply within one process only.
+- No OCR, frontend, answer-quality benchmark or deployment setup. Prompt citations are not independently validated.
+- The saved benchmark is a historical development result; it has not been rerun for these fixes.
 
 Development notes: [Progress](PROGRESS.MD) · [Steps](STEPS.md) · [Pipeline explanation](STEP_EXPLANATION.md).
+
+
+## Authenticated API
+
+All `/api/query` and `/api/documents` routes require `Authorization: Bearer <access_token>`.
+`/`, `/health`, `/docs`, and `/api/auth/login` remain public.
+
+Initialize an administrator with a prompted password (no default credentials):
+
+```bash
+PYTHONPATH=backend .venv/bin/python backend/manage.py admin
+```
+
+The database defaults to `data/docuquery.db` (SQLite). To use PostgreSQL, create an empty
+PostgreSQL database and set `DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/docuquery`
+in `.env` before starting the server or running management commands. Tables are created
+on startup; migrating an existing SQLite database to PostgreSQL is not automatic.
+
+| Endpoint | Behavior |
+| --- | --- |
+| `POST /api/auth/login` | JSON `username`, `password`; returns a bearer token valid for one hour |
+| `GET /api/auth/me` | Current user's ID, username, role, department |
+| `POST /api/auth/users` | Admin only; JSON `username`, `password` (12+ characters), `role`, `department` |
+| `POST /api/documents` | Multipart PDF and department; returns UUID and chunk count |
+| `GET /api/documents?offset=0&limit=50` | Department-visible metadata, status, and total; max limit 100 |
+| `GET /api/documents/{id}` | Document metadata; inaccessible IDs return 404 |
+| `DELETE /api/documents/{id}` | Deletes vectors and PDF; returns 204; also retries incomplete deletions |
+| `POST /api/query` | JSON `question`; retrieval restricted to visible ready documents |
+
+Admins access every department and create users. Editors upload, read, query, and delete
+within their department. Viewers read and query within their department. Roles and department
+membership are assigned by admins when creating users. Document access is department-wide;
+`owner_id` records the uploader, but does not grant extra access.
+
+Example login:
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/auth/login \
+  -H 'Content-Type: application/json' \
+  -d '{"username":"admin","password":"your-password"}'
+```
+
+Existing PDFs must be registered and reindexed before authenticated queries can retrieve them:
+
+```bash
+PYTHONPATH=backend .venv/bin/python backend/import_documents.py
+```
+
+This copies PDFs directly under supported department folders into UUID subfolders and retains
+originals. Re-running skips existing records; it never resets the vector collection.
+Failed uploads remain listed with `failed` status and can be deleted before retrying.
+Deletion revokes query access first; if storage cleanup fails, retry DELETE on the same ID.
+Files, Qdrant, and SQL storage are not a distributed transaction. A process crash can leave an
+`indexing` record; stop the interrupted worker and delete that record through the API before retrying.
+Use a single API worker to keep the BM25 cache current. Query requests already in progress
+may complete with their initial access snapshot. Production login throttling and a managed
+schema-migration workflow remain deployment work.
