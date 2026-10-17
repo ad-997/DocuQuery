@@ -401,4 +401,4 @@ Grounded Answer
 Source + Page Citations
 ```
 
-At that point, DocuQuery will move from being a retrieval system into a complete Retrieval-Augmented Generation system.
+At that point, DocuQuery will move from being a retrieval system into a complete Retrieval-Augmented Generation system. 
