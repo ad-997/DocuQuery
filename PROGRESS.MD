@@ -39,11 +39,14 @@ Enterprise RAG Knowledge Platform.
 - [x] Separate ACL/security queries from standard retrieval evaluation
 
 ### In Progress
-- [ ] BM25 retrieval evaluation
-- [ ] Dense vs BM25 retrieval comparison
-- [ ] RRF hybrid retrieval evaluation
-- [ ] Reranker evaluation
-- [ ] Retrieval benchmark comparison across all retrieval strategies
+- [x] BM25 retrieval evaluation
+- [x] Dense vs BM25 retrieval comparison
+- [x] RRF hybrid retrieval evaluation
+- [x] Reranker evaluation
+- [x] Retrieval benchmark comparison across all retrieval strategies
+- [x] Per-query improvement, regression, and Top-5 failure reports
+- [x] Candidate diversification experiment with preserved reranker baseline
+- [x] Retrieval evaluation regression tests
 
 ### Next
 - [ ] Improve and evaluate chunking strategies

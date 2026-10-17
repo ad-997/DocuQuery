@@ -59,17 +59,54 @@ Open `http://127.0.0.1:8000/` for the health message and `http://127.0.0.1:8000/
 | `backend/testing_pipeline.py` | Run the current single-document example |
 | `data/raw/` | Example PDFs, manifests and evaluation-query fixtures |
 
+## Retrieval evaluation
+
+The evaluation script compares Dense, BM25, RRF, RRF + Reranker, and
+RRF + Diversification + Reranker against the labelled PDF corpus. It uses a
+separate temporary Qdrant collection and deletes it after the run.
+Start Qdrant on localhost:6333 and install `qdrant-client` and `rank-bm25`
+in addition to the dependencies above, then run from the project root:
+
+```sh
+.venv/bin/python backend/evaluate_retrieval.py
+PYTHONPATH=backend .venv/bin/python -m unittest discover -s backend/tests -v
+```
+
+The report is saved to `data/retrieval_evaluation.json`, including per-query
+rankings, Recall@1/3/5, MRR@5, improvements, regressions, and candidate diagnostics.
+Use `--help` for data and output paths. ACL queries and queries without expected
+documents are counted separately and excluded from retrieval quality averages.
+This benchmark does not verify access permissions or answer quality.
+
+The original RRF and reranker baselines use 10 candidates from each retriever.
+The diversification experiment uses 30, retains at most two chunks per document,
+and reranks up to 10 candidates into a final top five. It changes both candidate
+depth and document diversity, so differences cannot be attributed to diversity alone.
+The document cap applies before reranking; it does not guarantee every relevant
+document survives into the final five.
+
+### Latest local benchmark
+
+110 queries evaluated; 4 ACL queries excluded (17 October 2026).
+
+| Method | Recall@1 | Recall@3 | Recall@5 | MRR@5 |
+| --- | --- | --- | --- | --- |
+| Dense | 0.668 | 0.886 | 0.950 | 0.801 |
+| BM25 | 0.855 | 0.900 | 0.995 | 0.917 |
+| RRF | 0.891 | 0.977 | 0.995 | 0.955 |
+| RRF + Reranker | 0.900 | 0.968 | 0.995 | 0.957 |
+| Diversified + Reranker | 0.891 | 0.982 | 1.000 | 0.955 |
+
+Diversification recovers COM-005 for CHALLENGE-08, raising its Recall@5
+from 0.5 to 1.0. It improves reciprocal rank on three queries and regresses
+on Q-IT-002. Aggregate MRR@5 decreases slightly, so the original reranker
+remains the comparison baseline. Version-aware retrieval remains future work.
+
 ## Current limits
 
-- The loader expects extractable text; scanned PDFs need OCR, and empty extraction needs handling.
-- Retrieval covers the document loaded by the script and keeps embeddings in memory.
-- Chunk-size/overlap validation, dependency locking and automated regression checks are still needed.
-- Evaluation fixtures are present, but retrieval quality has not been measured.
-
-## Next steps
-
-First, correct multi-page chunking and add checks for page coverage and empty PDFs. Then make dependencies reproducible and evaluate retrieval against the supplied questions.
-
-Later work: Qdrant persistence, BM25/hybrid retrieval, reranking, answer generation with citations, authentication and role-based access, a React interface and deployment.
+- No answer generation, permission enforcement, or search API yet.
+- Scanned PDFs need OCR; dependency locking and ingestion validation remain future work.
+- Document versions and current versus archived policies are not filtered yet.
+- The small labelled corpus is a development benchmark, not a general accuracy claim.
 
 Development notes: [Progress](PROGRESS.MD) · [Steps](STEPS.md) · [Pipeline explanation](STEP_EXPLANATION.md).
